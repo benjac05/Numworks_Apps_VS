@@ -2,13 +2,13 @@
 #define ION_STORAGE_H
 
 #include <assert.h>
-#include <ion/unicode/utf8_helper.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/unicode/utf8_helper.h"
 #include "record.h"
 #include "record_name_verifier.h"
 #include "storage_delegate.h"
 #include "storage_helper.h"
 
-namespace Ion {
+namespace Ion2 {
 
 /* Storage : | Magic |             Record1                 |            Record2                  | ... | Magic |
  *           | Magic | Size1(uint16_t) | FullName1 | Body1 | Size2(uint16_t) | FullName2 | Body2 | ... | Magic |

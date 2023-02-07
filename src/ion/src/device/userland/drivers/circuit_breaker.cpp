@@ -2,7 +2,7 @@
 #include <drivers/svcall.h>
 #include <ion/circuit_breaker.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace CircuitBreaker {
 
 bool SVC_ATTRIBUTES hasCheckpoint(CheckpointType type) {
@@ -15,7 +15,7 @@ void SVC_ATTRIBUTES loadCheckpoint(CheckpointType type) {
 
 Status stallUntilReady() {
   Status s = status();
-  while (s == Ion::CircuitBreaker::Status::Busy) {
+  while (s == Ion2::CircuitBreaker::Status::Busy) {
     s = status();
   }
   assert(s == Status::Set || s == Status::Interrupted);
@@ -34,8 +34,8 @@ Status setCheckpoint(CheckpointType type) {
   return stallUntilReady();
 }
 
-Ion::CircuitBreaker::Status SVC_ATTRIBUTES status() {
-  SVC_RETURNING_R0(SVC_CIRCUIT_BREAKER_STATUS, Ion::CircuitBreaker::Status)
+Ion2::CircuitBreaker::Status SVC_ATTRIBUTES status() {
+  SVC_RETURNING_R0(SVC_CIRCUIT_BREAKER_STATUS, Ion2::CircuitBreaker::Status)
 }
 
 void SVC_ATTRIBUTES unsetCheckpoint(CheckpointType type) {

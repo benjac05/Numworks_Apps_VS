@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/led.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace LED {
 
 KDColor SVC_ATTRIBUTES getColor() {

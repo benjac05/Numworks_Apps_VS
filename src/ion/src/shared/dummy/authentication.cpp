@@ -1,6 +1,6 @@
 #include <ion/authentication.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Authentication {
 
 ClearanceLevel clearanceLevel() {

@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion {
+namespace Ion2 {
 
 uint32_t crc32EatByte(uint32_t crc, uint8_t data);
 

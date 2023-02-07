@@ -163,7 +163,7 @@ public:
             break;
 
         default:
-           BApplication::MessageReceived(message);
+           BApplicatIon2::MessageReceived(message);
            break;
         }
     }

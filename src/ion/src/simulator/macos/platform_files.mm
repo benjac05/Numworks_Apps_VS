@@ -1,7 +1,7 @@
 #include "../shared/platform.h"
 #include <AppKit/AppKit.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

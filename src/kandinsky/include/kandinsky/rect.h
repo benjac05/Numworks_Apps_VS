@@ -1,10 +1,10 @@
 #ifndef KANDINSKY_RECT_H
 #define KANDINSKY_RECT_H
 
-#include <ion/display_constants.h>
-#include <kandinsky/coordinate.h>
-#include <kandinsky/point.h>
-#include <kandinsky/size.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/display_constants.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/rect.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/point.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/size.h"
 
 /*   +-+-+-+-+-+
  *   |x| | | | |
@@ -83,6 +83,6 @@ private:
 };
 
 constexpr KDRect KDRectZero = KDRect(0, 0, 0, 0);
-constexpr KDRect KDRectScreen = KDRect(0, 0, Ion::Display::Width, Ion::Display::Height);
+constexpr KDRect KDRectScreen = KDRect(0, 0, Ion2::Display::Width, Ion2::Display::Height);
 
 #endif

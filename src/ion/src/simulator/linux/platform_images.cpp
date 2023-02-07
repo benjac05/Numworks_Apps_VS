@@ -8,7 +8,7 @@
 
 #include <ion/src/simulator/linux/platform_images.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

@@ -3,7 +3,7 @@
 
 #include <ion/keyboard.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Keyboard {
 
 void resetMemoizedState();

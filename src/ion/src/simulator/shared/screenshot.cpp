@@ -10,7 +10,7 @@
 
 #include <cstdio>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 
 // Constexpr for event name drawing
@@ -103,4 +103,4 @@ Screenshot * Screenshot::commandlineScreenshot() {
 }
 
 }  // namespace Simulator
-}  // namespace Ion
+}  // namespace Ion2

@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <string.h>
 
-namespace Ion {
+namespace Ion2 {
 
 namespace Storage {
 

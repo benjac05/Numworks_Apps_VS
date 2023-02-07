@@ -115,7 +115,7 @@ int SDL_WinRTInitNonXAMLApp(int (*mainFunction)(int, char **))
 {
     WINRT_SDLAppEntryPoint = mainFunction;
     auto direct3DApplicationSource = ref new SDLApplicationSource();
-    CoreApplication::Run(direct3DApplicationSource);
+    CoreApplicatIon2::Run(direct3DApplicationSource);
     return 0;
 }
 
@@ -244,13 +244,13 @@ void SDL_WinRTApp::Initialize(CoreApplicationView^ applicationView)
     applicationView->Activated +=
         ref new TypedEventHandler<CoreApplicationView^, IActivatedEventArgs^>(this, &SDL_WinRTApp::OnAppActivated);
 
-    CoreApplication::Suspending +=
+    CoreApplicatIon2::Suspending +=
         ref new EventHandler<SuspendingEventArgs^>(this, &SDL_WinRTApp::OnSuspending);
 
-    CoreApplication::Resuming +=
+    CoreApplicatIon2::Resuming +=
         ref new EventHandler<Platform::Object^>(this, &SDL_WinRTApp::OnResuming);
 
-    CoreApplication::Exiting +=
+    CoreApplicatIon2::Exiting +=
         ref new EventHandler<Platform::Object^>(this, &SDL_WinRTApp::OnExiting);
 
 #if NTDDI_VERSION >= NTDDI_WIN10
@@ -260,7 +260,7 @@ void SDL_WinRTApp::Initialize(CoreApplicationView^ applicationView)
        sure that gamepad detection works later on, if requested.
     */
     Windows::Gaming::Input::Gamepad::GamepadAdded +=
-        ref new Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad^>(
+        ref new Windows::FoundatIon2::EventHandler<Windows::Gaming::Input::Gamepad^>(
             this, &SDL_WinRTApp::OnGamepadAdded
         );
 #endif
@@ -390,7 +390,7 @@ void SDL_WinRTApp::SetWindow(CoreWindow^ window)
 #endif
 
 #if NTDDI_VERSION > NTDDI_WIN8
-    DisplayInformation::GetForCurrentView()->OrientationChanged +=
+    DisplayInformatIon2::GetForCurrentView()->OrientationChanged +=
         ref new TypedEventHandler<Windows::Graphics::Display::DisplayInformation^, Object^>(this, &SDL_WinRTApp::OnOrientationChanged);
 #else
     DisplayProperties::OrientationChanged +=
@@ -476,7 +476,7 @@ void SDL_WinRTApp::PumpEvents()
              * 'ProcessAllIfPresent' will make ProcessEvents() process anywhere
              * from zero to N events, and will then return.
              */
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
+            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOptIon2::ProcessAllIfPresent);
         } else {
             /* This style of event-pumping, with 'ProcessOneAndAllPending',
              * will cause anywhere from one to N events to be processed.  If
@@ -485,7 +485,7 @@ void SDL_WinRTApp::PumpEvents()
              * available, and will not return (to the caller) until this
              * happens!  This should only occur when the app is hidden.
              */
-            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessOneAndAllPending);
+            CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOptIon2::ProcessOneAndAllPending);
         }
     }
 }
@@ -727,7 +727,7 @@ void SDL_WinRTApp::OnExiting(Platform::Object^ sender, Platform::Object^ args)
 }
 
 static void
-WINRT_LogPointerEvent(const char * header, Windows::UI::Core::PointerEventArgs ^ args, Windows::Foundation::Point transformedPoint)
+WINRT_LogPointerEvent(const char * header, Windows::UI::Core::PointerEventArgs ^ args, Windows::FoundatIon2::Point transformedPoint)
 {
     Windows::UI::Input::PointerPoint ^ pt = args->CurrentPoint;
     SDL_Log("%s: Position={%f,%f}, Transformed Pos={%f, %f}, MouseWheelDelta=%d, FrameId=%d, PointerId=%d, SDL button=%d\n",

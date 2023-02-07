@@ -7,7 +7,7 @@
 #include <ion/src/shared/keyboard_queue.h>
 #include <SDL.h>
 
-using namespace Ion::Keyboard;
+using namespace Ion2::Keyboard;
 
 class KeySDLKeyPair {
 public:
@@ -24,8 +24,8 @@ private:
 
 /* The sKeyPairs list indicates which keys on the host are bound to the
  * simulated calculator's own keyboard.
- * The state of those keys will be visible in Ion::Keyboard::state(), and as a
- * result will emit events from Ion::Events::sharedGetEvent.
+ * The state of those keys will be visible in Ion2::Keyboard::state(), and as a
+ * result will emit events from Ion2::Events::sharedGetEvent.
  * It looks like a great idea, but in many scenarios that 1:1 mapping is not the
  * best solution. For example, you may not want to emit a Clear event following
  * a Shift-Backspace on the host. */
@@ -44,7 +44,7 @@ constexpr static KeySDLKeyPair sKeyPairs[] = {
 
 constexpr int sNumberOfKeyPairs = sizeof(sKeyPairs)/sizeof(KeySDLKeyPair);
 
-namespace Ion {
+namespace Ion2 {
 namespace Keyboard {
 
 State scanForInterruptionAndPopState() {
@@ -93,15 +93,15 @@ State scan() {
 }
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Keyboard {
 
-void keyDown(Ion::Keyboard::Key k) {
+void keyDown(Ion2::Keyboard::Key k) {
   Queue::sharedQueue()->push(State(k));
 }
 
-void keyUp(Ion::Keyboard::Key k) {
+void keyUp(Ion2::Keyboard::Key k) {
   Queue::sharedQueue()->push(State(0));
 }
 

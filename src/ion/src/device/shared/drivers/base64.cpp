@@ -1,6 +1,6 @@
 #include "base64.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Base64 {
 

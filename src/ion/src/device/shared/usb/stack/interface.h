@@ -5,7 +5,7 @@
 #include "request_recipient.h"
 #include "setup_packet.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

@@ -4,7 +4,7 @@
 #include <ion/keyboard.h>
 #include <SDL.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Layout {
 
@@ -15,7 +15,7 @@ void recompute(int width, int height);
 void getScreenRect(SDL_Rect * rect);
 void getBackgroundRect(SDL_Rect * rect);
 
-Ion::Keyboard::Key getHighlightedKey();
+Ion2::Keyboard::Key getHighlightedKey();
 void highlightKeyAt(SDL_Point * p);
 void unhighlightKey();
 

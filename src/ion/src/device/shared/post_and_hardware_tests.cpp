@@ -4,19 +4,19 @@
 #include <ion/timing.h>
 #include <kandinsky/color.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace POSTAndHardwareTests {
 
 constexpr static int k_stampSize = 8;
 
 bool BatteryOK() {
-  return Ion::Battery::level() == Ion::Battery::Charge::FULL;
+  return Ion2::Battery::level() == Ion2::Battery::Charge::FULL;
 }
 
 bool VBlankOK() {
   bool result = true;
   for (int i = 0; i < 3; i++) {
-    result = result && Ion::Display::waitForVBlank();
+    result = result && Ion2::Display::waitForVBlank();
   }
   return result;
 }
@@ -30,8 +30,8 @@ int LCDDataGlyphFailures() {
 
   constexpr int stampSize = 10;
   constexpr int numberOfStamps = 3;
-  static_assert(Ion::Display::Width % stampSize == 0, "Stamps must tesselate the display");
-  static_assert(Ion::Display::Height % stampSize == 0, "Stamps must tesselate the display");
+  static_assert(Ion2::Display::Width % stampSize == 0, "Stamps must tesselate the display");
+  static_assert(Ion2::Display::Height % stampSize == 0, "Stamps must tesselate the display");
 
   KDColor stamps[numberOfStamps][stampSize*stampSize];
   constexpr KDColor colorForStamp[numberOfStamps] = {KDColorRed, KDColorBlue, KDColorGreen};
@@ -43,8 +43,8 @@ int LCDDataGlyphFailures() {
     }
   }
 
-  int numberOfHorizontalTiles = Ion::Display::Width / stampSize;
-  int numberOfVerticalTiles = Ion::Display::Height / stampSize;
+  int numberOfHorizontalTiles = Ion2::Display::Width / stampSize;
+  int numberOfVerticalTiles = Ion2::Display::Height / stampSize;
 
   constexpr int numberOfPasses = 150;
   int numberOfInvalidPixels = 0;
@@ -63,14 +63,14 @@ int LCDDataGlyphFailures() {
     for (int j=0; j<numberOfVerticalTiles; j++) {
       for (int i=0; i<numberOfHorizontalTiles; i++) {
         KDRect tile(i*stampSize, j*stampSize, stampSize, stampSize);
-        Ion::Display::pushRect(tile, (i+j)%2 == 0 ? firstStamp : secondStamp);
+        Ion2::Display::pushRect(tile, (i+j)%2 == 0 ? firstStamp : secondStamp);
       }
     }
     // Check the pattern
     for (int j=0; j<numberOfVerticalTiles; j++) {
       for (int i=0; i<numberOfHorizontalTiles; i++) {
         KDRect tile((i+1)*stampSize-stampWidthPull, (j+1)*stampSize-stampHeightPull, stampWidthPull, stampHeightPull);
-        Ion::Display::pullRect(tile, resultStamp);
+        Ion2::Display::pullRect(tile, resultStamp);
         KDColor c = colorForStamp[(i+j)%2 == 0 ? firstColorIndex : secondColorIndex];
         for (int k = 0; k < stampWidthPull * stampHeightPull; k++) {
           if (resultStamp[k] != c) {
@@ -87,11 +87,11 @@ int LCDTimingGlyphFailures() {
   int numberOfFailures = 0;
   const int rootNumberTiles = 3; //TODO 1 ?
   for (int i = 0; i < 100; i++) {
-    Ion::Display::POSTPushMulticolor(rootNumberTiles, k_stampSize);
+    Ion2::Display::POSTPushMulticolor(rootNumberTiles, k_stampSize);
     KDColor stamp[k_stampSize*k_stampSize];
     for (int i = 0; i < rootNumberTiles; i++) {
       for (int j = 0; j < rootNumberTiles; j++) {
-        Ion::Display::pullRect(KDRect(i * k_stampSize, j * k_stampSize, k_stampSize, k_stampSize), stamp);
+        Ion2::Display::pullRect(KDRect(i * k_stampSize, j * k_stampSize, k_stampSize, k_stampSize), stamp);
         int shift = (i+j) % 16;
         uint16_t color = (uint16_t)(1 << shift);
         for (int k = 0; k < k_stampSize*k_stampSize; k++) {
@@ -103,7 +103,7 @@ int LCDTimingGlyphFailures() {
         }
       }
     }
-    Ion::Timing::msleep(10);
+    Ion2::Timing::msleep(10);
   }
   return numberOfFailures;
 }
@@ -113,8 +113,8 @@ int ColorsLCDPixelFailures() {
   constexpr KDColor k_colors[] = {KDColorBlack, KDColorRed, KDColorBlue, KDColorGreen, KDColorWhite};
   constexpr int stampHeight = 10;
   constexpr int stampWidth = 10;
-  static_assert(Ion::Display::Width % stampWidth == 0, "Stamps must tesselate the display");
-  static_assert(Ion::Display::Height % stampHeight == 0, "Stamps must tesselate the display");
+  static_assert(Ion2::Display::Width % stampWidth == 0, "Stamps must tesselate the display");
+  static_assert(Ion2::Display::Height % stampHeight == 0, "Stamps must tesselate the display");
   constexpr int stampHeightPull = 80;
   constexpr int stampWidthPull = 80;
   for (KDColor c : k_colors) {
@@ -124,9 +124,9 @@ int ColorsLCDPixelFailures() {
         stamp[i] = c;
       }
 
-      for (int i=0; i<Ion::Display::Width/stampWidth; i++) {
-        for (int j=0; j<Ion::Display::Height/stampHeight; j++) {
-          Ion::Display::pushRect(KDRect(i*stampWidth, j*stampHeight, stampWidth, stampHeight), stamp);
+      for (int i=0; i<Ion2::Display::Width/stampWidth; i++) {
+        for (int j=0; j<Ion2::Display::Height/stampHeight; j++) {
+          Ion2::Display::pushRect(KDRect(i*stampWidth, j*stampHeight, stampWidth, stampHeight), stamp);
         }
       }
     }
@@ -134,12 +134,12 @@ int ColorsLCDPixelFailures() {
     int numberOfInvalidPixels = 0;
     KDColor stamp[stampHeightPull*stampHeightPull];
 
-    for (int i=0; i<Ion::Display::Width/stampWidthPull; i++) {
-      for (int j=0; j<Ion::Display::Height/stampHeightPull; j++) {
+    for (int i=0; i<Ion2::Display::Width/stampWidthPull; i++) {
+      for (int j=0; j<Ion2::Display::Height/stampHeightPull; j++) {
         for (int k=0; k<stampWidthPull*stampHeightPull; k++) {
           stamp[k] = KDColorBlack;
         }
-        Ion::Display::pullRect(KDRect(i*stampWidthPull, j*stampHeightPull, stampWidthPull, stampHeightPull), stamp);
+        Ion2::Display::pullRect(KDRect(i*stampWidthPull, j*stampHeightPull, stampWidthPull, stampHeightPull), stamp);
         for (int k=0; k<stampWidthPull*stampHeightPull; k++) {
           if (stamp[k] != c) {
             numberOfInvalidPixels++;
@@ -176,12 +176,12 @@ bool pushOrPullAs(bool push) {
   KDCoordinate currentWidth = 0;
   KDCoordinate currentHeight = 0;
   KDSize size(k_smallAWidth, k_smallAHeight);
-  while (currentHeight + k_smallAHeight < Ion::Display::Height ) {
-    while (currentWidth + k_smallAWidth < Ion::Display::Width ) {
+  while (currentHeight + k_smallAHeight < Ion2::Display::Height ) {
+    while (currentWidth + k_smallAWidth < Ion2::Display::Width ) {
       KDPoint position(currentWidth, currentHeight);
       if (push) {
         // Push the character on the screen
-        Ion::Display::pushRect(KDRect(position, size), reinterpret_cast<const KDColor *>(k_smallABuffer));
+        Ion2::Display::pushRect(KDRect(position, size), reinterpret_cast<const KDColor *>(k_smallABuffer));
       } else {
         // Pull and compare the character from the screen
         KDColor workingBuffer[k_smallAHeight][k_smallAWidth];
@@ -191,8 +191,8 @@ bool pushOrPullAs(bool push) {
           }
         }
         /* Caution: Unlike fillRectWithPixels, pullRect accesses outside (0, 0,
-         * Ion::Display::Width, Ion::Display::Height) might give weird data. */
-        Ion::Display::pullRect(KDRect(position, size), reinterpret_cast<KDColor *>(workingBuffer));
+         * Ion2::Display::Width, Ion2::Display::Height) might give weird data. */
+        Ion2::Display::pullRect(KDRect(position, size), reinterpret_cast<KDColor *>(workingBuffer));
         for (int i = 0; i < k_smallAHeight; i++) {
           for (int j = 0; j < k_smallAWidth; j++) {
             if (k_smallABuffer[i][j] != workingBuffer[i][j]) {

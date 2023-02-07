@@ -1,7 +1,7 @@
 #ifndef ION_DISPLAY_CONSTANTS_H
 #define ION_DISPLAY_CONSTANTS_H
 
-namespace Ion {
+namespace Ion2 {
 namespace Display {
 
 constexpr int Width = 320;

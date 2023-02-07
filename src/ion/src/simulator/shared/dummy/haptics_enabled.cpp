@@ -1,6 +1,6 @@
 #include "../haptics.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Haptics {
 

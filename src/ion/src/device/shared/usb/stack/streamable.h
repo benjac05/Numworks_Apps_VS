@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

@@ -4,7 +4,7 @@
 #include <shared/regs/register.h>
 #include <config/otg.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Regs {
 

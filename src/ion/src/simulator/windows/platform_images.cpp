@@ -87,7 +87,7 @@ static wchar_t * createWideCharArray(const char * src) {
   return wstr;
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

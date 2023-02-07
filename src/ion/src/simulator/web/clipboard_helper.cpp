@@ -56,7 +56,7 @@ EM_JS(void, get_clipboard_text, (char * buffer, uint32_t bufferSize, AsyncStatus
   }
 });
 
-namespace Ion {
+namespace Ion2 {
 namespace Clipboard {
 
 void sendToSystemClipboard(const char * text) {

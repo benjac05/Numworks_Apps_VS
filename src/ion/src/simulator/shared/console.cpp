@@ -3,7 +3,7 @@
 #include <kandinsky/ion_context.h>
 #include <stdio.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Console {
 
 char readChar() {

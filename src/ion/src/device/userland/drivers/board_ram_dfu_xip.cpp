@@ -1,6 +1,6 @@
 #include <config/board.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Board {
 

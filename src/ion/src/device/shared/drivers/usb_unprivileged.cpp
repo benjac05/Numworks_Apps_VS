@@ -1,9 +1,9 @@
 #include <ion/usb.h>
 #include <shared/regs/otg.h>
 
-using namespace Ion::Device::Regs;
+using namespace Ion2::Device::Regs;
 
-namespace Ion {
+namespace Ion2 {
 namespace USB {
 
 void clearEnumerationInterrupt() {

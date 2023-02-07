@@ -4,7 +4,7 @@
 #include <shared/drivers/kernel_header.h>
 #include <shared/drivers/userland_header.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

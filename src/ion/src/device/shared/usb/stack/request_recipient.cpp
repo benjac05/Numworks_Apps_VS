@@ -1,6 +1,6 @@
 #include "request_recipient.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

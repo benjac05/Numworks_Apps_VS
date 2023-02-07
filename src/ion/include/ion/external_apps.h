@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace ExternalApps {
 
 class App {

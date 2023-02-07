@@ -3,7 +3,7 @@
 
 #include <shared/drivers/svcall.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace SVCall {
 

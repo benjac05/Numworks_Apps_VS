@@ -1,6 +1,6 @@
 #include <ion/display.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Display {
 
 void POSTPushMulticolor(int rootNumberTiles, int tileSize) {

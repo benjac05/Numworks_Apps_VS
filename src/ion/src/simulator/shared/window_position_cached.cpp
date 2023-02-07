@@ -3,7 +3,7 @@
 #include <SDL.h>
 #include <stdio.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Window {
 
@@ -49,4 +49,4 @@ void willShutdown(SDL_Window * window) {
 
 }  // namespace Window
 }  // namespace Simulator
-}  // namespace Ion
+}  // namespace Ion2

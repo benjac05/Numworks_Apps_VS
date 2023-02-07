@@ -671,7 +671,7 @@ WINRT_CreateWindow(_THIS, SDL_Window * window)
         */
         bool didSetSize = false;
         if (!(requestedFlags & SDL_WINDOW_FULLSCREEN)) {
-            const Windows::Foundation::Size size(WINRT_PHYSICAL_PIXELS_TO_DIPS(window->w),
+            const Windows::FoundatIon2::Size size(WINRT_PHYSICAL_PIXELS_TO_DIPS(window->w),
                                                  WINRT_PHYSICAL_PIXELS_TO_DIPS(window->h));
             didSetSize = data->appView->TryResizeView(size);
         }
@@ -710,7 +710,7 @@ WINRT_SetWindowSize(_THIS, SDL_Window * window)
 {
 #if NTDDI_VERSION >= NTDDI_WIN10
     SDL_WindowData * data = (SDL_WindowData *)window->driverdata;
-    const Windows::Foundation::Size size(WINRT_PHYSICAL_PIXELS_TO_DIPS(window->w),
+    const Windows::FoundatIon2::Size size(WINRT_PHYSICAL_PIXELS_TO_DIPS(window->w),
                                          WINRT_PHYSICAL_PIXELS_TO_DIPS(window->h));
     data->appView->TryResizeView(size); // TODO, WinRT: return failure (to caller?) from TryResizeView()
 #endif
@@ -787,7 +787,7 @@ WINRT_CreateDisplayRequest(_THIS)
         goto done;
     }
 
-    hr = Windows::Foundation::GetActivationFactory(hClassName, &pActivationFactory);
+    hr = Windows::FoundatIon2::GetActivationFactory(hClassName, &pActivationFactory);
     if (FAILED(hr)) {
         goto done;
     }

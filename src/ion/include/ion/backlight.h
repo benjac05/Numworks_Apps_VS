@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Backlight {
 
 constexpr uint8_t MaxBrightness = 240;

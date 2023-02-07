@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <shared/drivers/flash_write_with_interruptions.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Flash {
 

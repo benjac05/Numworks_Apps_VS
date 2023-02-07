@@ -3,7 +3,7 @@
 
 #include <ion/telemetry.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Telemetry {
 

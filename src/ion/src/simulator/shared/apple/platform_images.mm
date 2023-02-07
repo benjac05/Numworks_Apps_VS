@@ -8,7 +8,7 @@
 #include <MobileCoreServices/MobileCoreServices.h>
 #endif
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

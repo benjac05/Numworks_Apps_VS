@@ -45,7 +45,7 @@
  * */
 
 
-namespace Ion {
+namespace Ion2 {
 
 namespace Storage {
 

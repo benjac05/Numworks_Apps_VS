@@ -4,7 +4,7 @@
 #include <setjmp.h>
 #include <stdint.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace CircuitBreaker {
 
 enum class CheckpointType : uint8_t {

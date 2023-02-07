@@ -1,7 +1,7 @@
 #ifndef ION_STORAGE_HELPER_H
 #define ION_STORAGE_HELPER_H
 
-namespace Ion {
+namespace Ion2 {
 
 namespace Storage {
 // emscripten read and writes must be aligned.

@@ -3,7 +3,7 @@
 
 #include <kandinsky/color.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Framebuffer {
 

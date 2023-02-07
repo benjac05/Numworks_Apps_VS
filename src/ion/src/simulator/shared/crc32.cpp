@@ -1,7 +1,7 @@
 #include <ion.h>
 #include <ion/src/shared/crc32_eat_byte.h>
 
-namespace Ion {
+namespace Ion2 {
 
 static uint32_t crc32Helper(const uint8_t * data, size_t length, bool wordAccess) {
   if (length == 0) {

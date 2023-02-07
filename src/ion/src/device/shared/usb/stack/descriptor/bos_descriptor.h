@@ -4,7 +4,7 @@
 #include "descriptor.h"
 #include "device_capability_descriptor.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

@@ -1,6 +1,6 @@
 #include <ion/external_apps.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace ExternalApps {
 
 App::App(uint8_t *) {}

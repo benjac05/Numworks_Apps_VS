@@ -15,7 +15,7 @@ static inline jstring JS(const char * s, JNIEnv * env) {
   return env->NewStringUTF(s);
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Telemetry {
 
@@ -37,7 +37,7 @@ void shutdown() {
 }
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Telemetry {
 
 void reportScreen(const char * screenName) {

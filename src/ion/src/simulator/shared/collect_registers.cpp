@@ -7,7 +7,7 @@ extern "C" {
 extern uintptr_t collect_registers(uintptr_t * regs) asm ("_collect_registers");
 
 }
-namespace Ion {
+namespace Ion2 {
 
 // Wrapper to avoid handling c++ name mangling when writing assembly code
 

@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Timing {
 
 void usleep(uint32_t us);

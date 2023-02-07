@@ -1,7 +1,7 @@
 #include <ion.h>
 #include <shared/drivers/serial_number.h>
 
-namespace Ion {
+namespace Ion2 {
 
 const char * serialNumber() {
   static char serialNumberBuffer[k_serialNumberLength + 1] = {0};

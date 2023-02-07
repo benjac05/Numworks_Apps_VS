@@ -1,6 +1,6 @@
 #include <ion/power.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Power {
 
 void suspend(bool checkIfOnOffKeyReleased) {}

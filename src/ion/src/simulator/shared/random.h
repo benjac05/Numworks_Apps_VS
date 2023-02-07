@@ -3,7 +3,7 @@
 
 #include <ion.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Random {
 

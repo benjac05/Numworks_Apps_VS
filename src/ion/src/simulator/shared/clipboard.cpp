@@ -4,7 +4,7 @@
 #include <string.h>
 #include "window.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Clipboard {
 
 uint32_t localClipboardVersion;

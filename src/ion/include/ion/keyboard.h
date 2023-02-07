@@ -7,9 +7,9 @@ extern "C" {
 #include <assert.h>
 }
 
-#include <ion/keyboard/layout_keyboard.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/keyboard/layout_keyboard.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Keyboard {
 
 constexpr Key ValidKeys[] = {
@@ -56,7 +56,7 @@ State scan();
 State scanForInterruptionAndPopState();
 State popState();
 
-static_assert(sizeof(State)*8>NumberOfKeys, "Ion::Keyboard::State cannot hold a keyboard snapshot");
+static_assert(sizeof(State)*8>NumberOfKeys, "Ion2::Keyboard::State cannot hold a keyboard snapshot");
 
 }
 }

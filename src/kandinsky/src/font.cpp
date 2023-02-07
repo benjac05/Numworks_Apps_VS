@@ -55,7 +55,7 @@ void KDFont::accumulateGlyphGrayscalesForCodePoint(CodePoint codePoint, GlyphBuf
 }
 
 void KDFont::fetchGrayscaleGlyphAtIndex(KDFont::GlyphIndex index, uint8_t * grayscaleBuffer) const {
-  Ion::decompress(
+  Ion2::decompress(
     compressedGlyphData(index),
     grayscaleBuffer,
     compressedGlyphDataSize(index),

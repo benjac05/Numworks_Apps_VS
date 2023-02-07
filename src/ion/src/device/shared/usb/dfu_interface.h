@@ -9,7 +9,7 @@
 #include "stack/setup_packet.h"
 #include "stack/streamable.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

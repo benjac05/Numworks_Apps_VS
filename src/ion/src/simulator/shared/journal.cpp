@@ -2,7 +2,7 @@
 #include "journal/queue_journal.h"
 #include <queue>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Journal {
 

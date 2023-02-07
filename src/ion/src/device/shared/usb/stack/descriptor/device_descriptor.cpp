@@ -1,6 +1,6 @@
 #include "device_descriptor.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

@@ -1,9 +1,9 @@
 #ifndef ION_LED_H
 #define ION_LED_H
 
-#include <kandinsky/color.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace LED {
 
 KDColor getColor();

@@ -4,7 +4,7 @@
 #include <poincare/print.h>
 #include <poincare/test/helper.h>
 
-using namespace Ion;
+using namespace Ion2;
 
 void testPersistingByte(PersistingBytes::PersistingBytesInt expectedValue) {
   PersistingBytes::PersistingBytesInt observedValue = PersistingBytes::read();

@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/battery.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Battery {
 
 bool SVC_ATTRIBUTES isCharging() {

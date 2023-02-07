@@ -1,6 +1,6 @@
 #include <ion/usb.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace USB {
 
 bool s_plugged = false;

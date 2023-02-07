@@ -4,22 +4,22 @@
 #include <ion/events.h>
 #include <queue>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Journal {
 
-class QueueJournal : public Ion::Events::Journal {
+class QueueJournal : public Ion2::Events::Journal {
 public:
-  void pushEvent(Ion::Events::Event e) override {
-    if (e != Ion::Events::None) {
+  void pushEvent(Ion2::Events::Event e) override {
+    if (e != Ion2::Events::None) {
       m_eventStorage.push(e);
     }
   }
-  Ion::Events::Event popEvent() override {
+  Ion2::Events::Event popEvent() override {
     if (isEmpty()) {
-      return Ion::Events::None;
+      return Ion2::Events::None;
     }
-    Ion::Events::Event e = m_eventStorage.front();
+    Ion2::Events::Event e = m_eventStorage.front();
     m_eventStorage.pop();
     return e;
   }
@@ -27,7 +27,7 @@ public:
     return m_eventStorage.empty();
   }
 private:
-  std::queue<Ion::Events::Event> m_eventStorage;
+  std::queue<Ion2::Events::Event> m_eventStorage;
 };
 
 }

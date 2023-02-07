@@ -12,10 +12,10 @@
  * which results in a very consequent speedup (up to ~10x faster). */
 
 #include "display_constants.h"
-#include "kandinsky/rect.h"
-#include "kandinsky/color.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/rect.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Display {
 
 void pushRect(KDRect r, const KDColor * pixels);

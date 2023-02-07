@@ -3,14 +3,14 @@
 
 #include <ion/events.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Journal {
 
 void init();
 
-Ion::Events::Journal * replayJournal();
-Ion::Events::Journal * logJournal();
+Ion2::Events::Journal * replayJournal();
+Ion2::Events::Journal * logJournal();
 
 }
 }

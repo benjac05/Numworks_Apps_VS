@@ -20,19 +20,19 @@ static int printInt(int x, char * buffer, size_t bufferSize) {
 }
 
 void assertionAbort(const char * expression, const char * file, int line) {
-  Ion::Events::setSpinner(false);
+  Ion2::Events::setSpinner(false);
   KDIonContext::Clear();
 
-  Ion::Console::writeLine("ASSERTION FAILED x_x");
-  Ion::Console::writeLine(expression);
-  Ion::Console::writeLine(file);
+  Ion2::Console::writeLine("ASSERTION FAILED x_x");
+  Ion2::Console::writeLine(expression);
+  Ion2::Console::writeLine(file);
 
   constexpr size_t bufferSize = 20;
   char buffer[bufferSize] = {'l', 'i', 'n', 'e', ' '};
   int length = 5;
   length += printInt(line, buffer + length, bufferSize - length);
   buffer[length] = '\0';
-  Ion::Console::writeLine(buffer);
+  Ion2::Console::writeLine(buffer);
 
   while (true);
 }

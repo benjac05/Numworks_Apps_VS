@@ -6,7 +6,7 @@
 
 #define always_inline __attribute__((always_inline))
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Regs {
 

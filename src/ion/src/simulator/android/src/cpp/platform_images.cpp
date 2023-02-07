@@ -4,7 +4,7 @@
 #include <android/bitmap.h>
 #include <assert.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

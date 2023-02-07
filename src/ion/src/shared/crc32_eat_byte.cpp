@@ -1,6 +1,6 @@
 #include "crc32_eat_byte.h"
 
-namespace Ion {
+namespace Ion2 {
 
 constexpr uint32_t polynomial = 0x04C11DB7;
 

@@ -1,7 +1,7 @@
 #ifndef ION_DEVICE_SHARED_BASE64_H
 #define ION_DEVICE_SHARED_BASE64_H
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace Base64 {
 

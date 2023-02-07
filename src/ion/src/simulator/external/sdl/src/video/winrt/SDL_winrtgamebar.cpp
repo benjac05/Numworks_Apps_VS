@@ -54,17 +54,17 @@ IGameBarStatics_ : public IInspectable
 public:
     virtual HRESULT STDMETHODCALLTYPE add_VisibilityChanged( 
         __FIEventHandler_1_IInspectable *handler,
-        Windows::Foundation::EventRegistrationToken *token) = 0;
+        Windows::FoundatIon2::EventRegistrationToken *token) = 0;
     
     virtual HRESULT STDMETHODCALLTYPE remove_VisibilityChanged( 
-        Windows::Foundation::EventRegistrationToken token) = 0;
+        Windows::FoundatIon2::EventRegistrationToken token) = 0;
     
     virtual HRESULT STDMETHODCALLTYPE add_IsInputRedirectedChanged( 
         __FIEventHandler_1_IInspectable *handler,
-        Windows::Foundation::EventRegistrationToken *token) = 0;
+        Windows::FoundatIon2::EventRegistrationToken *token) = 0;
     
     virtual HRESULT STDMETHODCALLTYPE remove_IsInputRedirectedChanged( 
-        Windows::Foundation::EventRegistrationToken token) = 0;
+        Windows::FoundatIon2::EventRegistrationToken token) = 0;
     
     virtual HRESULT STDMETHODCALLTYPE get_Visible( 
         boolean *value) = 0;
@@ -94,7 +94,7 @@ WINRT_GetGameBar()
         goto done;
     }
 
-    hr = Windows::Foundation::GetActivationFactory(hClassName, &pActivationFactory);
+    hr = Windows::FoundatIon2::GetActivationFactory(hClassName, &pActivationFactory);
     if (FAILED(hr)) {
         goto done;
     }
@@ -162,8 +162,8 @@ WINRT_InitGameBar(_THIS)
            SDL thread.
         */
         WINRT_MainThreadDispatcher = Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher;
-        Windows::Foundation::EventHandler<Platform::Object ^> ^handler = \
-            ref new Windows::Foundation::EventHandler<Platform::Object ^>(&WINRT_HandleGameBarIsInputRedirected_NonMainThread);
+        Windows::FoundatIon2::EventHandler<Platform::Object ^> ^handler = \
+            ref new Windows::FoundatIon2::EventHandler<Platform::Object ^>(&WINRT_HandleGameBarIsInputRedirected_NonMainThread);
         __FIEventHandler_1_IInspectable * pHandler = reinterpret_cast<__FIEventHandler_1_IInspectable *>(handler);
         gameBar->add_IsInputRedirectedChanged(pHandler, &driverdata->gameBarIsInputRedirectedToken);
         gameBar->Release();

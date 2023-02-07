@@ -3,7 +3,7 @@
 // Choose some not too uniform data to program and test the external flash memory with.
 
 inline uint8_t expected_value_at(uint8_t * ptr) {
-  uint32_t address = reinterpret_cast<uint32_t>(ptr) - Ion::Device::ExternalFlash::Config::StartAddress;
+  uint32_t address = reinterpret_cast<uint32_t>(ptr) - Ion2::Device::ExternalFlash::Config::StartAddress;
   return (address / 0x10000) + (address / 0x100) + address;
   // Example: the value expected at the address 0x123456 is 0x12 + 0x34 + 0x56.
 }

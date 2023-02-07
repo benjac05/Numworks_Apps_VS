@@ -3,7 +3,7 @@
 #include "serial_number.h"
 #include <ion.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace SerialNumber {
 

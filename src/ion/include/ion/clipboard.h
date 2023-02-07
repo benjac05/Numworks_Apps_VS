@@ -1,7 +1,7 @@
 #ifndef ION_CLIPBOARD_H
 #define ION_CLIPBOARD_H
 
-namespace Ion {
+namespace Ion2 {
 namespace Clipboard {
 
 /* Write the text to the system clipboard. */

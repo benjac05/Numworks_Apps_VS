@@ -4,7 +4,7 @@
 #include "../../../poincare/include/poincare/print_int.h"
 #include <assert.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 class Scenario {
@@ -60,20 +60,20 @@ constexpr static int numberOfScenari = sizeof(scenarios)/sizeof(Scenario);
 Event getEvent(int * timeout) {
   static int scenarioIndex = 0;
   static int eventIndex = 0;
-  static uint64_t startTime = Ion::Timing::millis();
+  static uint64_t startTime = Ion2::Timing::millis();
   static int timings[numberOfScenari];
   if (eventIndex >= scenarios[scenarioIndex].numberOfEvents()) {
-    timings[scenarioIndex++] = Ion::Timing::millis() - startTime;
+    timings[scenarioIndex++] = Ion2::Timing::millis() - startTime;
     eventIndex = 0;
-    startTime = Ion::Timing::millis();
+    startTime = Ion2::Timing::millis();
   }
   if (scenarioIndex >= numberOfScenari) {
     // Display results
     int line_y = 1;
     KDContext * ctx = KDIonContext::SharedContext();
     ctx->setOrigin(KDPointZero);
-    ctx->setClippingRect(KDRect(0,0,Ion::Display::Width,Ion::Display::Height));
-    ctx->fillRect(KDRect(0,0,Ion::Display::Width,Ion::Display::Height), KDColorWhite);
+    ctx->setClippingRect(KDRect(0,0,Ion2::Display::Width,Ion2::Display::Height));
+    ctx->fillRect(KDRect(0,0,Ion2::Display::Width,Ion2::Display::Height), KDColorWhite);
     KDFont::Size font = KDFont::Size::Large;
     int line_height = KDFont::GlyphHeight(font);
     for (int i = 0; i < numberOfScenari; i++) {

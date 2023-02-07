@@ -13,15 +13,15 @@ void abort() {
   while (1) {
   }
 #else
-  Ion::Reset::core();
+  Ion2::Reset::core();
 #endif
 }
 
 void __attribute__((noinline)) start() {
-  Ion::Device::Init::configureRAM();
+  Ion2::Device::Init::configureRAM();
   // Initialize slotInfo to be accessible to Kernel
-  Ion::Device::USB::slotInfo();
-  Ion::ExternalApps::deleteApps();
+  Ion2::Device::USB::slotInfo();
+  Ion2::ExternalApps::deleteApps();
   ion_main(0, nullptr);
   abort();
 }

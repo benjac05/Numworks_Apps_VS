@@ -2,11 +2,11 @@
 #include <ion.h>
 #include <assert.h>
 
-using namespace Ion::Keyboard;
-using namespace Ion::Events;
+using namespace Ion2::Keyboard;
+using namespace Ion2::Events;
 
 QUIZ_CASE(ion_events_from_keyboard) {
-  /* FIXME Userland does not have access to method Ion::Events::Event::Event(Keyboard::State, bool, bool, bool) */
+  /* FIXME Userland does not have access to method Ion2::Events::Event::Event(Keyboard::State, bool, bool, bool) */
 
 #if 0
   /* Ensure all events generated from the keyboard are properly defined */

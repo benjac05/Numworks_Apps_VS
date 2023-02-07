@@ -6,7 +6,7 @@
 #include <SDL.h>
 #include <string.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Display {
 
@@ -21,8 +21,8 @@ void init(SDL_Renderer * renderer) {
     renderer,
     texturePixelFormat,
     SDL_TEXTUREACCESS_STREAMING,
-    Ion::Display::Width,
-    Ion::Display::Height
+    Ion2::Display::Width,
+    Ion2::Display::Height
   );
 }
 
@@ -35,8 +35,8 @@ void draw(SDL_Renderer * renderer, SDL_Rect * rect) {
   int pitch = 0;
   void * pixels = nullptr;
   SDL_LockTexture(sFramebufferTexture, nullptr, &pixels, &pitch);
-  assert(pitch == sizeof(KDColor)*Ion::Display::Width);
-  memcpy(pixels, Framebuffer::address(), sizeof(KDColor)*Ion::Display::Width*Ion::Display::Height);
+  assert(pitch == sizeof(KDColor)*Ion2::Display::Width);
+  memcpy(pixels, Framebuffer::address(), sizeof(KDColor)*Ion2::Display::Width*Ion2::Display::Height);
   SDL_UnlockTexture(sFramebufferTexture);
 
   SDL_RenderCopy(renderer, sFramebufferTexture, nullptr, rect);

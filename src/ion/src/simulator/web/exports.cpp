@@ -6,28 +6,28 @@
 #include <ion.h>
 
 const char * IonSoftwareVersion() {
-  return Ion::epsilonVersion();
+  return Ion2::epsilonVersion();
 }
 
 const char * IonPatchLevel() {
-  return Ion::patchLevel();
+  return Ion2::patchLevel();
 }
 
 void IonSimulatorKeyboardKeyDown(int keyNumber) {
-  Ion::Keyboard::Key key = static_cast<Ion::Keyboard::Key>(keyNumber);
-  Ion::Simulator::Keyboard::keyDown(key);
+  Ion2::Keyboard::Key key = static_cast<Ion2::Keyboard::Key>(keyNumber);
+  Ion2::Simulator::Keyboard::keyDown(key);
 }
 
 void IonSimulatorKeyboardKeyUp(int keyNumber) {
-  Ion::Keyboard::Key key = static_cast<Ion::Keyboard::Key>(keyNumber);
-  Ion::Simulator::Keyboard::keyUp(key);
+  Ion2::Keyboard::Key key = static_cast<Ion2::Keyboard::Key>(keyNumber);
+  Ion2::Simulator::Keyboard::keyUp(key);
 }
 
 void IonSimulatorEventsPushEvent(int eventNumber) {
-  Ion::Events::Journal * j = Ion::Simulator::Journal::replayJournal();
+  Ion2::Events::Journal * j = Ion2::Simulator::Journal::replayJournal();
   if (j != nullptr) {
-    Ion::Events::Event event(eventNumber);
+    Ion2::Events::Event event(eventNumber);
     j->pushEvent(event);
-    Ion::Events::replayFrom(j);
+    Ion2::Events::replayFrom(j);
   }
 }

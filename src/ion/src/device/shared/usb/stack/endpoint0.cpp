@@ -6,7 +6,7 @@
 #include <shared/regs/otg.h>
 #include <string.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

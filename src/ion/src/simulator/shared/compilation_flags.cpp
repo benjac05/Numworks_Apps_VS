@@ -5,7 +5,7 @@
 #error This file expects ASSERTIONS & EXTERNAL_APPS_API_LEVEL to be defined
 #endif
 
-namespace Ion {
+namespace Ion2 {
 
 /*
  * We use an uint32_t as a bit array representing the compilation flags.

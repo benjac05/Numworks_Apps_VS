@@ -32,7 +32,7 @@
 
 void ion_main(int argc, const char * const argv[]);
 
-namespace Ion {
+namespace Ion2 {
 
 const char * epsilonVersion();
 const char * kernelVersion();

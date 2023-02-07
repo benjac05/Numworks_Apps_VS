@@ -1,6 +1,6 @@
 #include <ion/console.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Console {
 
 char readChar() {

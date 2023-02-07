@@ -4,7 +4,7 @@
 #include <ion/events.h>
 #include <ion/keyboard.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 Event sharedGetEvent(int * timeout);

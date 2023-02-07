@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <string.h>
 
-using namespace Ion;
+using namespace Ion2;
 
 Storage::Record::ErrorStatus putRecordInSharedStorage(const char * baseName, const char * extension, const char * data) {
   size_t dataSize = strlen(data);
@@ -95,7 +95,7 @@ QUIZ_CASE(ion_storage_invalid_renaming) {
 
   // Rename the record with an invalid name
   const char * fullNameRecord2 = "invalidNameWithoutDot";
-  error = Ion::Storage::Record::SetFullName(&retrievedRecord, fullNameRecord2);
+  error = Ion2::Storage::Record::SetFullName(&retrievedRecord, fullNameRecord2);
   quiz_assert(error == Storage::Record::ErrorStatus::NonCompliantName);
 
   // Destroy it
@@ -124,7 +124,7 @@ QUIZ_CASE(ion_storage_valid_renaming) {
 
   // Rename the record with a valid name
   const char * newFullNameRecord = "testStorage.record2";
-  error = Ion::Storage::Record::SetFullName(&retrievedRecord, newFullNameRecord);
+  error = Ion2::Storage::Record::SetFullName(&retrievedRecord, newFullNameRecord);
   quiz_assert(error == Storage::Record::ErrorStatus::None);
 
   // Retrieve the previous record
@@ -521,7 +521,7 @@ bool isDataOfRecord(const char * baseName, const char * extension, const char * 
 
 QUIZ_CASE(ion_storage_record_name_verifier) {
 
-  Ion::Storage::RecordNameVerifier * recordNameVerifier = Storage::FileSystem::sharedFileSystem()->recordNameVerifier();
+  Ion2::Storage::RecordNameVerifier * recordNameVerifier = Storage::FileSystem::sharedFileSystem()->recordNameVerifier();
   recordNameVerifier->registerRestrictiveExtensionWithPrecedence(Storage::funcExtension, 1);
   recordNameVerifier->registerRestrictiveExtensionWithPrecedence(Storage::seqExtension, 1);
   recordNameVerifier->registerRestrictiveExtensionWithPrecedence(Storage::expExtension, 2);

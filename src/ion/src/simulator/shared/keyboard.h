@@ -4,12 +4,12 @@
 #include <ion/keyboard.h>
 #include <SDL.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Keyboard {
 
-void keyDown(Ion::Keyboard::Key k);
-void keyUp(Ion::Keyboard::Key k);
+void keyDown(Ion2::Keyboard::Key k);
+void keyUp(Ion2::Keyboard::Key k);
 bool scanHandlesSDLKey(SDL_Scancode key);
 void didScan();
 

@@ -12,7 +12,7 @@
  */
 
 
-namespace Ion {
+namespace Ion2 {
 namespace Battery {
 
 bool isCharging();

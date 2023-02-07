@@ -2,14 +2,14 @@
 #include "../shared/journal/queue_journal.h"
 #include <emscripten.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Journal {
 
-using Ion::Events::Event;
-using Ion::Events::None;
+using Ion2::Events::Event;
+using Ion2::Events::None;
 
-class LogJournal : public Ion::Events::Journal {
+class LogJournal : public Ion2::Events::Journal {
 public:
   void pushEvent(Event e) override {
     static bool lastEventWasNone = false;
@@ -48,7 +48,7 @@ Events::Journal * replayJournal() {
   return &journal;
 }
 
-Ion::Events::Journal * logJournal() {
+Ion2::Events::Journal * logJournal() {
   static LogJournal journal;
   return &journal;
 }

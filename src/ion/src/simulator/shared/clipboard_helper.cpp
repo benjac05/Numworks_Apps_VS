@@ -4,7 +4,7 @@
 
 /* This implementation is used for all targets but the web simulator. */
 
-namespace Ion {
+namespace Ion2 {
 namespace Clipboard {
 
 void sendToSystemClipboard(const char * text) {

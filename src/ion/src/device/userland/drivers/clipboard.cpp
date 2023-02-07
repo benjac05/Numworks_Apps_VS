@@ -1,6 +1,6 @@
 #include <ion/clipboard.h>
 
-namespace Ion {
+namespace Ion2 {
 
 /* Dummy implementation
  * On the device, the clipboard is fully handled by Escher::Clipboard. */

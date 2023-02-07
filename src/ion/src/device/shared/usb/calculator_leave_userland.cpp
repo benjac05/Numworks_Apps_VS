@@ -10,7 +10,7 @@ extern char _external_apps_flash_start;
 extern char _external_apps_flash_end;
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

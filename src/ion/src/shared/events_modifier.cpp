@@ -1,7 +1,7 @@
 #include "events_modifier.h"
 #include <assert.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 static ShiftAlphaStatus sShiftAlphaStatus = ShiftAlphaStatus::Default;

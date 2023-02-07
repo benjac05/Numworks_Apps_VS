@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Clipboard {
 
 void sendToSystemClipboard(const char * text);

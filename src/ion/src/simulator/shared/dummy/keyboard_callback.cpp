@@ -1,6 +1,6 @@
 #include "../keyboard.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Keyboard {
 

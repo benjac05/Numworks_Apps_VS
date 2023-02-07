@@ -1,7 +1,7 @@
 #include <ion.h>
 #include <drivers/svcall.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace SerialNumber {
 

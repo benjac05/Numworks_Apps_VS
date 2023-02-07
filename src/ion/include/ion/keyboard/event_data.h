@@ -1,7 +1,7 @@
 #ifndef ION_KEYBOARD_EVENT_DATA_H
 #define ION_KEYBOARD_EVENT_DATA_H
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 class EventData {

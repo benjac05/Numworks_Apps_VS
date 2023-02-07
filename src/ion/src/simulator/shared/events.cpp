@@ -21,7 +21,7 @@
 #endif
 
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 // ion/src/simulator/shared/events.h
@@ -90,7 +90,7 @@ Event getEvent(int * timeout) {
     if (sSourceJournal->isEmpty()) {
       sSourceJournal = nullptr;
 #if ESCHER_LOG_EVENTS_NAME
-      Ion::Console::writeLine("----- STATE FILE FULLY LOADED -----");
+      Ion2::Console::writeLine("----- STATE FILE FULLY LOADED -----");
 #endif
 #if ION_SIMULATOR_FILES
       // Save screenshot
@@ -99,7 +99,7 @@ Event getEvent(int * timeout) {
     } else {
       res = sSourceJournal->popEvent();
 #if ESCHER_LOG_EVENTS_NAME
-      Ion::Console::writeLine("(From state file) ", false);
+      Ion2::Console::writeLine("(From state file) ", false);
 #endif
 #if ION_SIMULATOR_FILES
       // Save step screenshot

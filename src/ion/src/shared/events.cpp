@@ -11,7 +11,7 @@ extern "C" {
 #include <assert.h>
 }
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 const char * EventData::text() const {
@@ -48,8 +48,8 @@ Event::Event(Keyboard::Key key, bool shift, bool alpha, bool lock) {
   } while (offset > k_plainEventsOffset && !s_dataForEvent[m_id].isDefined() && m_id < k_specialEventsOffset);
 
   // If we press percent in alphalock, change to backspace
-  if (m_id == static_cast<uint8_t>(Ion::Events::Percent) && lock){
-    m_id = static_cast<uint8_t>(Ion::Events::Backspace);
+  if (m_id == static_cast<uint8_t>(Ion2::Events::Percent) && lock){
+    m_id = static_cast<uint8_t>(Ion2::Events::Backspace);
   }
   assert(m_id != Events::None.m_id);
 }
@@ -86,7 +86,7 @@ Event privateSharedGetEvent(int * timeout) {
   assert(*timeout > delayBeforeRepeat);
   assert(*timeout > delayBetweenRepeat);
 
-  int startTime = Ion::Timing::millis();
+  int startTime = Ion2::Timing::millis();
   while (true) {
     if (handlePreemption(false)) {
       return None;
@@ -167,13 +167,13 @@ Event privateSharedGetEvent(int * timeout) {
       return None;
     }
 
-    int elapsedTime = Ion::Timing::millis() - startTime;
+    int elapsedTime = Ion2::Timing::millis() - startTime;
 
     /* At this point, we know that keysSeenTransitioningFromUpToDown has
      * always been zero. In other words, no new key has been pressed. */
     if (elapsedTime >= delayForRepeat) {
       assert(isRepeatableEvent);
-      Ion::Events::incrementLongPress();
+      Ion2::Events::incrementLongPress();
       return sLastEvent;
     }
 

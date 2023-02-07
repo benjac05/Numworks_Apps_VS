@@ -5,7 +5,7 @@
 #include <ion/unicode/code_point.h>
 #include "event_data.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 extern const EventData s_dataForEvent[Event::k_specialEventsOffset];

@@ -56,7 +56,7 @@ protected:
 #endif
     void OnWindowSizeChanged(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::WindowSizeChangedEventArgs^ args);
     void OnLogicalDpiChanged(Platform::Object^ sender);
-    void OnAppActivated(Windows::ApplicationModel::Core::CoreApplicationView^ applicationView, Windows::ApplicationModel::Activation::IActivatedEventArgs^ args);
+    void OnAppActivated(Windows::ApplicationModel::Core::CoreApplicationView^ applicationView, Windows::ApplicationModel::ActivatIon2::IActivatedEventArgs^ args);
     void OnSuspending(Platform::Object^ sender, Windows::ApplicationModel::SuspendingEventArgs^ args);
     void OnResuming(Platform::Object^ sender, Platform::Object^ args);
     void OnExiting(Platform::Object^ sender, Platform::Object^ args);

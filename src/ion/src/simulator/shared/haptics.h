@@ -1,7 +1,7 @@
 #ifndef ION_SIMULATOR_HAPTICS_H
 #define ION_SIMULATOR_HAPTICS_H
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Haptics {
 

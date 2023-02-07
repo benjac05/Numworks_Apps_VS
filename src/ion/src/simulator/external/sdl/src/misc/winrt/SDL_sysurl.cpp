@@ -34,7 +34,7 @@ SDL_SYS_OpenURL(const char *url)
     auto strurl = ref new Platform::String(wurl);
     SDL_free(wurl);
 
-    auto uri = ref new Windows::Foundation::Uri(strurl);
+    auto uri = ref new Windows::FoundatIon2::Uri(strurl);
     Windows::System::Launcher::LaunchUriAsync(uri);
     return 0;  // oh well, we're not waiting on an async task here.
 }

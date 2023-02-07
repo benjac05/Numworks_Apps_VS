@@ -1,6 +1,6 @@
 #include "../platform.h"
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 
@@ -14,4 +14,4 @@ const char * filePathInTempDir(const char * filename) {
 
 }  // namespace Platform
 }  // namespace Simulator
-}  // namespace Ion
+}  // namespace Ion2

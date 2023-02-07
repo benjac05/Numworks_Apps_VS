@@ -3,7 +3,7 @@
 
 #include <ion/events.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 
 class Screenshot {
@@ -22,6 +22,6 @@ private:
 };
 
 }  // namespace Simulator
-}  // namespace Ion
+}  // namespace Ion2
 
 #endif /* COMPARE_SCREENSHOT_H */

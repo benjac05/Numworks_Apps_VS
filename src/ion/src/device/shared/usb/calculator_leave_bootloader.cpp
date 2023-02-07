@@ -3,7 +3,7 @@
 #include <shared-core/drivers/reset.h>
 #include <shared/usb/calculator.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Device {
 namespace USB {
 

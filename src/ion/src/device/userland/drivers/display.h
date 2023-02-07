@@ -5,7 +5,7 @@
 #include <kandinsky/font.h>
 #include <kandinsky/point.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Display {
 
 void drawString(const char * text, KDPoint point, bool largeFont, KDColor textColor, KDColor backgroundColor);

@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ion/ring_buffer.h>
 
-using namespace Ion;
+using namespace Ion2;
 
 constexpr int k_ringSize = 6;
 

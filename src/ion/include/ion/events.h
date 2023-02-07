@@ -1,12 +1,12 @@
 #ifndef ION_EVENTS_H
 #define ION_EVENTS_H
 
-#include <ion/keyboard.h>
+#include "keyboard.h"
 #if ION_EVENTS_JOURNAL
 #include <string.h>
 #endif
 
-namespace Ion {
+namespace Ion2 {
 namespace Events {
 
 class Event {
@@ -23,9 +23,10 @@ public:
   constexpr static Event ShiftAlphaKey(Keyboard::Key k) { return Event(k_shiftAlphaEventsOffset+(int)k); }
   constexpr static Event Special(int i) { return Event(k_specialEventsOffset+i); }
 
-  // Return Ion::Event::None by default
+  // Return Ion2::Event::None by default
   constexpr Event() : m_id(k_specialEventsOffset) {}
-  constexpr Event(int i) : m_id(i) { assert(static_cast<int>(m_id) == i); }
+  //constexpr Event(int i) : m_id(i) { assert(static_cast<int>(m_id) == i); }
+  constexpr Event(int i) : m_id(i) {}
   constexpr explicit operator uint8_t() const { return m_id; }
 
   Event(Keyboard::Key key, bool shift, bool alpha, bool lock);

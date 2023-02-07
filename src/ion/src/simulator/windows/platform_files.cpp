@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <stdio.h>
 
-namespace Ion {
+namespace Ion2 {
 namespace Simulator {
 namespace Platform {
 

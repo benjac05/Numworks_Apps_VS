@@ -1,7 +1,7 @@
 #ifndef ION_USB_H
 #define ION_USB_H
 
-namespace Ion {
+namespace Ion2 {
 namespace USB {
 
 bool isPlugged();
