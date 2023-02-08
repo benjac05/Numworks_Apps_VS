@@ -6,17 +6,18 @@ NWLINK = npx --yes -- nwlink@0.0.16
 LINK_GC = 1
 LTO = 1
 
+include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/build/all.mak
 include src/ion/Makefile
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/Makefile
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/bootloader.mak
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/userland.mak
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/Makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/core/os2/geniconv/makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/hidapi/windows/ddk_build/makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/Makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/web/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/core/os2/geniconv/makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/hidapi/windows/ddk_build/makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/web/Makefile
 include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/test/device/Makefile
 
 define object_for
@@ -38,6 +39,7 @@ ifeq ($(LINK_GC),1)
 CPPFLAGS += -fdata-sections -ffunction-sections
 LDFLAGS += -Wl,-e,main -Wl,-u,eadk_app_name -Wl,-u,eadk_app_icon -Wl,-u,eadk_api_level
 LDFLAGS += -Wl,--gc-sections
+LDGLAGS += -Wl, -u, 
 endif
 
 ifeq ($(LTO),1)
