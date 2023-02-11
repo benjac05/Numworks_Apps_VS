@@ -1,13 +1,13 @@
 #ifndef KANDINSKY_FONT_H
 #define KANDINSKY_FONT_H
 
-#include <ion/unicode/code_point.h>
-#include <kandinsky/coordinate.h>
-#include <kandinsky/fonts/SmallFont.h>
-#include <kandinsky/fonts/LargeFont.h>
-#include <kandinsky/fonts/code_points.h>
-#include <kandinsky/fonts/font_constants.h>
-#include <kandinsky/size.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/unicode/code_point.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/coordinate.h"
+//#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/LargeFont.h"
+//#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/SmallFont.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/code_points.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/font_constants.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/size.h"
 #include <stddef.h>
 #include <stdint.h>
 #include <algorithm>
