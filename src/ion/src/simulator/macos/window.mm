@@ -3,7 +3,7 @@
 #include "../external/sdl/src/video/cocoa/SDL_cocoawindow.h"
 #import <Cocoa/Cocoa.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Window {
 

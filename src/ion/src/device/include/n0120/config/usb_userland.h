@@ -1,7 +1,7 @@
 #ifndef ION_DEVICE_N0120_CONFIG_USB_H
 #define ION_DEVICE_N0120_CONFIG_USB_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 namespace Config {

@@ -13,7 +13,7 @@ extern char _external_apps_RAM_start;
 extern char _external_apps_RAM_end;
 }
 
-namespace Ion2 {
+namespace Ion {
 
 namespace Storage {
 
@@ -23,13 +23,13 @@ extern char staticStorageArea[];
 
 namespace Device {
 
-constexpr void * storageAddress = &(Ion2::Storage::staticStorageArea);
+constexpr void * storageAddress = &(Ion::Storage::staticStorageArea);
 
 constexpr UserlandHeader::UserlandHeader() :
   m_header(Magic),
   m_expectedEpsilonVersion{EPSILON_VERSION},
   m_storageAddressRAM(storageAddress),
-  m_storageSizeRAM(Ion2::Storage::FileSystem::k_storageSize),
+  m_storageSizeRAM(Ion::Storage::FileSystem::k_storageSize),
   m_externalAppsFlashStart(&_external_apps_flash_start),
   m_externalAppsFlashEnd(&_external_apps_flash_end),
   m_externalAppsRAMStart(&_external_apps_RAM_start),
@@ -41,11 +41,11 @@ constexpr UserlandHeader __attribute__((section(".userland_header"),used)) k_use
 }
 
 const char * epsilonVersion() {
-  return Ion2::Device::Board::kernelHeader()->epsilonVersion();
+  return Ion::Device::Board::kernelHeader()->epsilonVersion();
 }
 
 const char * patchLevel() {
-  return Ion2::Device::Board::kernelHeader()->patchLevel();
+  return Ion::Device::Board::kernelHeader()->patchLevel();
 }
 
 }

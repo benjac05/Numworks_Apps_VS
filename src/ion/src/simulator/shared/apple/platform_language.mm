@@ -2,7 +2,7 @@
 
 #include <Foundation/Foundation.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Platform {
 

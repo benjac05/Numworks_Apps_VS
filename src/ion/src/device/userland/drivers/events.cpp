@@ -2,7 +2,7 @@
 #include <ion/keyboard/layout_events.h>
 #include <ion/events.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 size_t SVC_ATTRIBUTES copyText(uint8_t eventId, char * buffer, size_t bufferSize) {

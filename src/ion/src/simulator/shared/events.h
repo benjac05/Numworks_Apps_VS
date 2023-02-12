@@ -4,7 +4,7 @@
 #include <ion/events.h>
 #include <SDL.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 constexpr static size_t sharedExternalTextBufferSize = sizeof(SDL_TextInputEvent::text);

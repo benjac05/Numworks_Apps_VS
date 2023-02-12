@@ -2,7 +2,7 @@
 #include <jni.h>
 #include <assert.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Platform {
 

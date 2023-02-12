@@ -5,7 +5,7 @@
 #include <shared/drivers/userland_header.h>
 #include <stdint.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Board {
 

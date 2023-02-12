@@ -5,7 +5,7 @@
 #include <cassert>
 #include <ion/events.h>
 
-using namespace Ion2::Events;
+using namespace Ion::Events;
 
 // TODO : Update this script to handle state file headers
 

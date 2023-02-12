@@ -1,6 +1,6 @@
 #include <ion/led.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace LED {
 
 KDColor getColor() {

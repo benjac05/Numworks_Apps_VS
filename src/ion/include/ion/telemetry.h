@@ -1,7 +1,7 @@
 #ifndef ION_TELEMETRY_H
 #define ION_TELEMETRY_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Telemetry {
 
 void reportScreen(const char * screenName);

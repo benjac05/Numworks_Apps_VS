@@ -1,6 +1,6 @@
 #include "platform.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Platform {
 
@@ -10,4 +10,4 @@ const char * cacheWindowPositionFilePath() {
 
 }  // namespace Platform
 }  // namespace Simulator
-}  // namespace Ion2
+}  // namespace Ion

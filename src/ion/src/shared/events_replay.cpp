@@ -1,12 +1,12 @@
 #include <ion.h>
 
-/* Use this implementation of Ion2::Events::getEvent to simulate pre-recorded key
+/* Use this implementation of Ion::Events::getEvent to simulate pre-recorded key
  * presses. This implementation doesn't wait at all, which can be useful when
  * profiling code execution. */
 
 const int loopLength = 12;
 
-using namespace Ion2::Events;
+using namespace Ion::Events;
 
 const Event sequence[] = {
   Right,
@@ -17,7 +17,7 @@ const Event sequence[] = {
   Up, Up, Up, Up, Up, Up
 };
 
-Event Ion2::Events::getEvent(int * timeout) {
+Event Ion::Events::getEvent(int * timeout) {
   static int i = 0;
   int sequenceLength = sizeof(sequence)/sizeof(sequence[0]);
   if (i == sequenceLength) {

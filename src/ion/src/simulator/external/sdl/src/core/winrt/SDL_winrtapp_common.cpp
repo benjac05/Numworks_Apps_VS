@@ -35,7 +35,7 @@ SDL_WinRTRunApp(SDL_main_func mainFunction, void * xamlBackgroundPanel)
     if (xamlBackgroundPanel) {
         return SDL_WinRTInitXAMLApp(mainFunction, xamlBackgroundPanel);
     } else {
-        if (FAILED(Windows::FoundatIon2::Initialize(RO_INIT_MULTITHREADED))) {
+        if (FAILED(Windows::FoundatIon::Initialize(RO_INIT_MULTITHREADED))) {
             return 1;
         }
         return SDL_WinRTInitNonXAMLApp(mainFunction);

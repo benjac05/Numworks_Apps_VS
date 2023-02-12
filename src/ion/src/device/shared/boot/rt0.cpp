@@ -15,7 +15,7 @@ extern "C" {
   extern cxx_constructor _init_array_end;
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Init {
 

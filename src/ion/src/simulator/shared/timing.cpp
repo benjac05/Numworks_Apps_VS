@@ -5,7 +5,7 @@
 
 static auto start = std::chrono::steady_clock::now();
 
-namespace Ion2 {
+namespace Ion {
 namespace Timing {
 
 uint64_t millis() {

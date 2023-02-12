@@ -1,7 +1,7 @@
 #ifndef KANDINSKY_DOT_H
 #define KANDINSKY_DOT_H
 
-#include <kandinsky/coordinate.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/coordinate.h"
 #include <algorithm>
 
 template <KDCoordinate Size>

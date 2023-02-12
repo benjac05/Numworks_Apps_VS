@@ -22,7 +22,7 @@ def print_header(f):
     f.write("#include <limits.h>\n")
     f.write("#include <cmath>\n")
 
-    f.write("namespace Ion2 {\n")
+    f.write("namespace Ion {\n")
     f.write("namespace Simulator {\n")
     f.write("namespace Layout {\n")
 

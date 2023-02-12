@@ -25,10 +25,10 @@ ion_src += ion/src/shared/telemetry_console.cpp
 endif
 
 # RC file dependencies
-$(call object_for,ion/src/simulator/windows/resources.rc): WRFLAGS += -I $(BUILD_DIR)
-$(call object_for,ion/src/simulator/windows/resources.rc): $(addprefix $(BUILD_DIR)/,logo.ico)
+$(call object_for,ion/src/simulator/windows/resources.rc): WRFLAGS += -I output
+$(call object_for,ion/src/simulator/windows/resources.rc): $(addprefix output/,logo.ico)
 
-$(addprefix $(BUILD_DIR)/,logo.ico): ion/src/simulator/assets/logo.svg | $$(@D)/.
+$(addprefix output/,logo.ico): ion/src/simulator/assets/logo.svg | $$(@D)/.
 	$(call rule_label,CONVERT)
 	$(Q) convert -background "#FFB734" -resize 256x256 $< $@
 
@@ -43,5 +43,5 @@ $(eval $(call rule_for, \
   global \
 ))
 
-$(call object_for,ion/src/simulator/windows/platform_images.cpp): $(BUILD_DIR)/ion/src/simulator/windows/images.h
-$(call object_for,ion/src/simulator/windows/resources.rc): $(BUILD_DIR)/ion/src/simulator/windows/resources_gen.rc
+$(call object_for,ion/src/simulator/windows/platform_images.cpp): output/ion/src/simulator/windows/images.h
+$(call object_for,ion/src/simulator/windows/resources.rc): output/ion/src/simulator/windows/resources_gen.rc

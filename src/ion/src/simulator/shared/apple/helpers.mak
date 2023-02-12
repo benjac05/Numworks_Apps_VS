@@ -2,7 +2,7 @@
 # The only things that have to be customized per platform are the icons and the
 # Info.plist.
 
-SIMULATOR_APP_PATH = $(BUILD_DIR)
+SIMULATOR_APP_PATH = output
 
 simulator_app_binary = $(SIMULATOR_APP_PATH)/%.app/$(SIMULATOR_APP_BINARY_PATH)Epsilon
 simulator_app_resource = $(SIMULATOR_APP_PATH)/%.app/$(SIMULATOR_APP_RESOURCE_PATH)$(1)
@@ -10,7 +10,7 @@ simulator_app_plist = $(SIMULATOR_APP_PATH)/%.app/$(SIMULATOR_APP_PLIST_PATH)$(1
 
 # Epsilon binary
 
-$(simulator_app_binary): $(foreach arch,$(ARCHS),$(BUILD_DIR)/$(arch)/%.bin) | $$(@D)/.
+$(simulator_app_binary): $(foreach arch,$(ARCHS),output/$(arch)/%.bin) | $$(@D)/.
 	$(call rule_label,LIPO)
 	$(Q) $(LIPO) -create $^ -output $@
 

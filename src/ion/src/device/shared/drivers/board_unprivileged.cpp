@@ -8,7 +8,7 @@ extern "C" {
   extern char _persisting_bytes_buffer_start;
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Board {
 

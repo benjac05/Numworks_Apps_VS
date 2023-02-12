@@ -7,7 +7,7 @@
 #error This file expects DEBUG, ASSERTIONS & EXTERNAL_APPS_API_LEVEL to be defined
 #endif
 
-namespace Ion2 {
+namespace Ion {
 
 /*
  * We use an uint32_t as a bit array representing the compilation flags. The most significant 16 bits concern the kernel compilation and the least significant 16 bits concern the userland.

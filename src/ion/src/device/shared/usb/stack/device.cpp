@@ -2,7 +2,7 @@
 #include <config/internal_flash.h>
 #include <shared/regs/otg.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 

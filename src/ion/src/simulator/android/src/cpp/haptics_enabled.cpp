@@ -3,7 +3,7 @@
 #include <SDL.h>
 #include <assert.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Haptics {
 

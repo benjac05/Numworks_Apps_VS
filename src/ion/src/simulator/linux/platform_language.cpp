@@ -1,7 +1,7 @@
 #include "../shared/platform.h"
 #include <locale.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Platform {
 

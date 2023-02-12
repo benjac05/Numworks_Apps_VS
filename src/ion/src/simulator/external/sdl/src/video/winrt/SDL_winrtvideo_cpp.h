@@ -50,7 +50,7 @@ typedef struct SDL_VideoData {
     /* Event token(s), for unregistering WinRT event handler(s).
        These are just a struct with a 64-bit integer inside them
     */
-    Windows::FoundatIon2::EventRegistrationToken gameBarIsInputRedirectedToken;
+    Windows::FoundatIon::EventRegistrationToken gameBarIsInputRedirectedToken;
 
     /* A WinRT DisplayRequest, used for implementing SDL_*ScreenSaver() functions.
      * This is really a pointer to a 'ABI::Windows::System::Display::IDisplayRequest *',
@@ -81,7 +81,7 @@ extern "C" Uint32 WINRT_DetectWindowFlags(SDL_Window * window);  /* detects flag
 
 /* A convenience macro to get a WinRT display property */
 #if NTDDI_VERSION > NTDDI_WIN8
-#define WINRT_DISPLAY_PROPERTY(NAME) (Windows::Graphics::Display::DisplayInformatIon2::GetForCurrentView()->NAME)
+#define WINRT_DISPLAY_PROPERTY(NAME) (Windows::Graphics::Display::DisplayInformatIon::GetForCurrentView()->NAME)
 #else
 #define WINRT_DISPLAY_PROPERTY(NAME) (Windows::Graphics::Display::DisplayProperties::NAME)
 #endif

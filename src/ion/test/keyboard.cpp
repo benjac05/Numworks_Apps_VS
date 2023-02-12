@@ -2,7 +2,7 @@
 #include <ion.h>
 #include <assert.h>
 
-using namespace Ion2::Keyboard;
+using namespace Ion::Keyboard;
 
 QUIZ_CASE(ion_keyboard) {
   for (Key k : ValidKeys) {

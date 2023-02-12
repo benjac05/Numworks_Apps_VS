@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <algorithm>
 
-#include "palette.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/palette.h"
 
 constexpr static int indexOf(const uint32_t * array, const int arraySize, const uint32_t value) {
   return arraySize == 0 ? -1 : value == *array ? 0 : 1 + indexOf(array + 1, arraySize - 1, value);

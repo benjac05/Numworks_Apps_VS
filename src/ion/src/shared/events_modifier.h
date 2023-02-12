@@ -3,7 +3,7 @@
 
 #include <ion/events.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 void removeShift();

@@ -1,7 +1,7 @@
 #ifndef ION_KEYBOARD_LAYOUT_LAYOUT_H
 #define ION_KEYBOARD_LAYOUT_LAYOUT_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Keyboard {
 
 enum class Key : uint8_t {

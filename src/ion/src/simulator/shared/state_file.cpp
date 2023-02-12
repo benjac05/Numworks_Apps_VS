@@ -4,7 +4,7 @@
 #include <string.h>
 #include "journal.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace StateFile {
 
@@ -14,7 +14,7 @@ constexpr static int sVersionLength = 8;
 constexpr static const char * sWildcardVersion = "**.**.**";
 constexpr static int sFormatVersionLength = 1;
 constexpr static uint8_t sLatestFormatVersion = 1;
-constexpr static int sLanguageLength = Ion2::Events::Journal::k_languageSize-1;
+constexpr static int sLanguageLength = Ion::Events::Journal::k_languageSize-1;
 constexpr static const char * sWildcardLanguage = "**";
 
 /* File format:
@@ -48,7 +48,7 @@ static inline bool load(FILE * f) {
   }
 
   // Journal
-  Ion2::Events::Journal * journal = Journal::replayJournal();
+  Ion::Events::Journal * journal = Journal::replayJournal();
 
   // Format version
   int c = 0;
@@ -70,18 +70,18 @@ static inline bool load(FILE * f) {
 
   // Events
   while ((c = getc(f)) != EOF) {
-    Ion2::Events::Event e = Ion2::Events::Event(c);
+    Ion::Events::Event e = Ion::Events::Event(c);
     if (Events::isDefined(static_cast<uint8_t>(e))
-        && e != Ion2::Events::None
-        && e != Ion2::Events::Termination
-        && e != Ion2::Events::TimerFire
-        && e != Ion2::Events::ExternalText) {
+        && e != Ion::Events::None
+        && e != Ion::Events::Termination
+        && e != Ion::Events::TimerFire
+        && e != Ion::Events::ExternalText) {
       /* Avoid pushing invalid events - useful when fuzzing.
        * ExternalText is not handled by state files. */
       journal->pushEvent(e);
     }
   }
-  Ion2::Events::replayFrom(journal);
+  Ion::Events::replayFrom(journal);
 
   return true;
 }
@@ -118,13 +118,13 @@ static inline bool save(FILE * f) {
   if (fwrite(&sLatestFormatVersion, sFormatVersionLength, 1, f) != 1) {
     return false;
   }
-  Ion2::Events::Journal * journal = Journal::logJournal();
+  Ion::Events::Journal * journal = Journal::logJournal();
   const char * logJournalLanguage = journal->startingLanguage()[0] != 0 ? journal->startingLanguage() : sWildcardLanguage;
   if (fwrite(logJournalLanguage, sLanguageLength, 1, f) != 1) {
     return false;
   }
   while (!journal->isEmpty()) {
-    Ion2::Events::Event e = journal->popEvent();
+    Ion::Events::Event e = journal->popEvent();
     uint8_t code = static_cast<uint8_t>(e);
     if (fwrite(&code, 1, 1, f) != 1) {
       return false;

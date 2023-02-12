@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion.h>
 
-namespace Ion2 {
+namespace Ion {
 
 uint32_t SVC_ATTRIBUTES devicePcbVersion() {
   SVC_RETURNING_R0(SVC_PCB_VERSION, uint32_t)

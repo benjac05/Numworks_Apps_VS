@@ -1,7 +1,7 @@
 #ifndef ION_CONSOLE_H
 #define ION_CONSOLE_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Console {
 
 void writeChar(char c);

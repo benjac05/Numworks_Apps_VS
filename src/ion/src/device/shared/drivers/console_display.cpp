@@ -1,7 +1,7 @@
 #include <ion/console.h>
 #include <kandinsky/ion_context.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Console {
 
 char readChar() {

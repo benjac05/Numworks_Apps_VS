@@ -68,17 +68,17 @@ public:
 private:
     const SDL_bool iscapture;
     DeviceWatcher^ watcher;
-    Windows::FoundatIon2::EventRegistrationToken added_handler;
-    Windows::FoundatIon2::EventRegistrationToken removed_handler;
-    Windows::FoundatIon2::EventRegistrationToken updated_handler;
-    Windows::FoundatIon2::EventRegistrationToken completed_handler;
-    Windows::FoundatIon2::EventRegistrationToken default_changed_handler;
+    Windows::FoundatIon::EventRegistrationToken added_handler;
+    Windows::FoundatIon::EventRegistrationToken removed_handler;
+    Windows::FoundatIon::EventRegistrationToken updated_handler;
+    Windows::FoundatIon::EventRegistrationToken completed_handler;
+    Windows::FoundatIon::EventRegistrationToken default_changed_handler;
 };
 
 SDL_WasapiDeviceEventHandler::SDL_WasapiDeviceEventHandler(const SDL_bool _iscapture)
     : iscapture(_iscapture)
     , completed(SDL_CreateSemaphore(0))
-    , watcher(DeviceInformatIon2::CreateWatcher(_iscapture ? DeviceClass::AudioCapture : DeviceClass::AudioRender))
+    , watcher(DeviceInformatIon::CreateWatcher(_iscapture ? DeviceClass::AudioCapture : DeviceClass::AudioRender))
 {
     if (!watcher || !completed)
         return;  // uhoh.

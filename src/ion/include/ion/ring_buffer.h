@@ -3,7 +3,7 @@
 
 #include <assert.h>
 
-namespace Ion2 {
+namespace Ion {
 
 // All implementations are in header to avoid having to specify templates
 

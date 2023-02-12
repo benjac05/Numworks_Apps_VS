@@ -1,7 +1,7 @@
 #ifndef ION_DEVICE_SHARED_DRIVERS_SVCALL_H
 #define ION_DEVICE_SHARED_DRIVERS_SVCALL_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace SVCall {
 

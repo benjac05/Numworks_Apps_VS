@@ -1,6 +1,6 @@
 #include <ion/backlight.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Backlight {
 
 uint8_t brightness() {

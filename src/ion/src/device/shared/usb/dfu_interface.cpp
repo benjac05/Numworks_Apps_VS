@@ -5,7 +5,7 @@
 #include <ion/timing.h>
 #include <string.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 
@@ -68,7 +68,7 @@ void DFUInterface::wholeDataSentCallback(SetupPacket * request, uint8_t * transf
        * This error might be due to the USB connection being cut too soon after
        * the last USB exchange, so the host does not have time to process the
        * answer received for the last GetStatus request. */
-      Ion2::Timing::msleep(1);
+      Ion::Timing::msleep(1);
       // Leave DFU routine: Leave DFU, reset device, jump to application code
       leaveDFUAndReset();
     } else if (m_state == State::dfuDNBUSY) {

@@ -4,7 +4,7 @@
 #include <drivers/usb.h>
 #include <shared/drivers/board_shared.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace USB {
 
 bool SVC_ATTRIBUTES isPlugged() {
@@ -14,7 +14,7 @@ bool SVC_ATTRIBUTES isPlugged() {
 }
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 
@@ -23,7 +23,7 @@ bool SVC_ATTRIBUTES shouldInterruptDFU() {
 }
 
 const char * stringDescriptor() {
-  if (AuthenticatIon2::clearanceLevel() == Ion2::AuthenticatIon2::ClearanceLevel::NumWorks || AuthenticatIon2::clearanceLevel() == Ion2::AuthenticatIon2::ClearanceLevel::NumWorksAndThirdPartyApps) {
+  if (AuthenticatIon::clearanceLevel() == Ion::AuthenticatIon::ClearanceLevel::NumWorks || AuthenticatIon::clearanceLevel() == Ion::AuthenticatIon::ClearanceLevel::NumWorksAndThirdPartyApps) {
     return Board::isRunningSlotA() ? Config::InterfaceFlashStringDescriptorAuthenticatedSlotA : Config::InterfaceFlashStringDescriptorAuthenticatedSlotB;
   } else {
     return Board::isRunningSlotA() ? Config::InterfaceFlashStringDescriptorThirdPartySlotA : Config::InterfaceFlashStringDescriptorThirdPartySlotB;

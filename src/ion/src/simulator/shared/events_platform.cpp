@@ -13,7 +13,7 @@
 #include <SDL.h>
 #include <string.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 static inline Event eventFromSDLKeyboardEvent(SDL_KeyboardEvent event) {

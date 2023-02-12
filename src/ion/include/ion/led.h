@@ -3,7 +3,7 @@
 
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace LED {
 
 KDColor getColor();

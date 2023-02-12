@@ -7,7 +7,7 @@
 #include<iostream>
 #endif
 
-namespace Ion2 {
+namespace Ion {
 
 namespace Storage {
 
@@ -74,7 +74,7 @@ void FileSystem::getAvailableSpaceFromEndOfRecord(Record r, size_t recordAvailab
 }
 
 uint32_t FileSystem::checksum() {
-  return Ion2::crc32Byte((const uint8_t *) m_buffer, endBuffer()-m_buffer);
+  return Ion::crc32Byte((const uint8_t *) m_buffer, endBuffer()-m_buffer);
 }
 
 void FileSystem::notifyChangeToDelegate(const Record record) const {

@@ -4,7 +4,7 @@
 #include <shared/drivers/usb.h>
 #include <shared/usb/calculator.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace USB {
 
 void DFU() {

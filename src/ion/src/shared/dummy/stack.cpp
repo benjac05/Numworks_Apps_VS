@@ -1,5 +1,5 @@
 #include <ion.h>
 
-bool Ion2::stackSafe() {
+bool Ion::stackSafe() {
   return true;
 }

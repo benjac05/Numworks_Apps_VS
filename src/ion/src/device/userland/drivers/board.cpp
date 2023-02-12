@@ -1,7 +1,7 @@
 #include "board.h"
 #include <drivers/svcall.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Board {
 

@@ -1,10 +1,10 @@
-#include <kandinsky/font.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/font.h"
 extern "C" {
-#include <kandinsky/fonts/code_points.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
 }
-#include <ion.h>
-#include <ion/unicode/utf8_decoder.h>
-#include <assert.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/unicode/utf8_decoder.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/assert.h"
 #include <algorithm>
 
 constexpr static int k_tabCharacterWidth = 4;
@@ -55,7 +55,7 @@ void KDFont::accumulateGlyphGrayscalesForCodePoint(CodePoint codePoint, GlyphBuf
 }
 
 void KDFont::fetchGrayscaleGlyphAtIndex(KDFont::GlyphIndex index, uint8_t * grayscaleBuffer) const {
-  Ion2::decompress(
+  Ion::decompress(
     compressedGlyphData(index),
     grayscaleBuffer,
     compressedGlyphDataSize(index),

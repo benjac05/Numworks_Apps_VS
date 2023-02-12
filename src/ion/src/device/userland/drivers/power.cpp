@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/power.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Power {
 
 void SVC_ATTRIBUTES selectStandbyMode(bool standbyMode) {

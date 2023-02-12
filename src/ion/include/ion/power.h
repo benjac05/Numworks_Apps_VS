@@ -1,7 +1,7 @@
 #ifndef ION_POWER_H
 #define ION_POWER_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Power {
 
 void suspend(bool checkIfOnOffKeyReleased = false);

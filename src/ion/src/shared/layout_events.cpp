@@ -1,6 +1,6 @@
 #include <ion/keyboard/layout_events.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 // TODO factorize in header without creating conflicts with template named T

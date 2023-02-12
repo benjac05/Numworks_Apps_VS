@@ -1,13 +1,13 @@
 #include <ion/battery.h>
 
-bool Ion2::Battery::isCharging() {
+bool Ion::Battery::isCharging() {
   return false;
 }
 
-Ion2::Battery::Charge Ion2::Battery::level() {
+Ion::Battery::Charge Ion::Battery::level() {
   return Charge::FULL;
 }
 
-float Ion2::Battery::voltage() {
+float Ion::Battery::voltage() {
   return 0.0f;
 }

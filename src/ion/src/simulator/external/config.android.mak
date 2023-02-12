@@ -35,10 +35,10 @@ sdl_src += $(addprefix ion/src/simulator/external/sdl/src/, \
 
 # Build the android native library cpufeatures
 SDL_SFLAGS += -I$(NDK_PATH)/sources/android/cpufeatures
-$(BUILD_DIR)/app/android/cpu-features.c: $$(@D)/.
+output/app/android/cpu-features.c: $$(@D)/.
 	$(call rule_label,COPY)
 	$(Q) cp $(NDK_PATH)/sources/android/cpufeatures/cpu-features.c $@
-sdl_src += $(BUILD_DIR)/app/android/cpu-features.c
+sdl_src += output/app/android/cpu-features.c
 
 LDFLAGS += -lGLESv1_CM
 LDFLAGS += -lGLESv2

@@ -1,7 +1,7 @@
 #ifndef KANDINSKY_MEASURING_CONTEXT_H
 #define KANDINSKY_MEASURING_CONTEXT_H
 
-#include <kandinsky/context.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
 #include <ion/display.h>
 
 class KDMeasuringContext : public KDContext {

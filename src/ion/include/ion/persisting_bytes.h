@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace PersistingBytes {
 
 /* Warning : All persisting bytes are expected to be initialized to 0 in

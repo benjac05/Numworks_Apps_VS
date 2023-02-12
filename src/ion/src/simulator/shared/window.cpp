@@ -9,7 +9,7 @@
 #include "layout.h"
 #include "platform.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Window {
 
@@ -41,7 +41,7 @@ void init() {
 #if EPSILON_SDL_SCREEN_ONLY
       // When rendering the screen only, make a non-resizeable window whose size
       // matches the screen's
-      Ion2::Display::Width, Ion2::Display::Height,
+      Ion::Display::Width, Ion::Display::Height,
       0  // Default flags: no high-dpi, not resizeable.
 #else
       458, 888,  // Otherwise use a default size that makes the screen pixel-perfect
@@ -138,4 +138,4 @@ void shutdown() {
 
 }  // namespace Window
 }  // namespace Simulator
-}  // namespace Ion2
+}  // namespace Ion

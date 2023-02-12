@@ -6,10 +6,10 @@ endif
 
 SFLAGS += -Iion/include -DKD_CONFIG_H=1
 
-include ion/image/Makefile
-include ion/src/$(PLATFORM)/Makefile
--include ion/test/$(PLATFORM)/Makefile
-include ion/src/shared/tools/Makefile
+include src/ion/image/Makefile
+include ion/src/device/Makefile
+-include ion/test/device/Makefile
+include src/ion/src/shared/tools/Makefile
 
 ion_src += $(addprefix ion/src/shared/, \
   console_line.cpp \

@@ -11,8 +11,10 @@
 #ifndef KANDINSKY_FONTS_RASTERIZER_H
 #define KANDINSKY_FONTS_RASTERIZER_H
 
-#include <ft2build.h>
-#include FT_FREETYPE_H
+//#include <ft2build.h>
+#include "/usr/local/Cellar/freetype/2.12.1/include/freetype2/ft2build.h"
+#include "/usr/local/Cellar/freetype/2.12.1/include/freetype2/freetype/freetype.h"
+//#include FT_FREETYPE_H
 
 #include "code_points.h"
 #include "font_constants.h"

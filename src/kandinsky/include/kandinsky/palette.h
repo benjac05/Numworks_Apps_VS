@@ -1,7 +1,7 @@
 #ifndef KANDINSKY_PALETTE_H
 #define KANDINSKY_PALETTE_H
 
-#include <kandinsky/color.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
 #include <assert.h>
 
 template <int S>

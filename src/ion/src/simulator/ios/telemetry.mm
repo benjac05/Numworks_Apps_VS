@@ -4,7 +4,7 @@
 #import <GAIDictionaryBuilder.h>
 #import <GAIFields.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Telemetry {
 
@@ -27,7 +27,7 @@ static inline NSString * NS(const char * s) {
   }
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace Telemetry {
 
 void reportScreen(const char * screenName) {

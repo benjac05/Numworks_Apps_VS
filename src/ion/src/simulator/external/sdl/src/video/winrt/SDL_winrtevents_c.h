@@ -50,8 +50,8 @@ typedef enum {
     NormalizeZeroToOne,
     TransformToSDLWindowSize
 } WINRT_CursorNormalizationType;
-extern Windows::FoundatIon2::Point WINRT_TransformCursorPosition(SDL_Window * window,
-                                                                Windows::FoundatIon2::Point rawPosition,
+extern Windows::FoundatIon::Point WINRT_TransformCursorPosition(SDL_Window * window,
+                                                                Windows::FoundatIon::Point rawPosition,
                                                                 WINRT_CursorNormalizationType normalization);
 extern Uint8 WINRT_GetSDLButtonForPointerPoint(Windows::UI::Input::PointerPoint ^pt);
 extern void WINRT_ProcessPointerPressedEvent(SDL_Window *window, Windows::UI::Input::PointerPoint ^pointerPoint);

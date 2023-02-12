@@ -4,7 +4,7 @@
 #include <ion/keyboard.h>
 #include <ion/ring_buffer.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Keyboard {
 
 constexpr static size_t k_maximalNumberOfStates = 5;

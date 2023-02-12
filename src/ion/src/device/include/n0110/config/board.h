@@ -11,7 +11,7 @@
  * this file is converted to .ld.
  * Calls to "static_assert" are replaced with LD "ASSERT". */
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Board {
 namespace Config {

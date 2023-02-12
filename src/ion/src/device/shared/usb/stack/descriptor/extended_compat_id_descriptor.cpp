@@ -1,7 +1,7 @@
 #include "extended_compat_id_descriptor.h"
 #include <string.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 

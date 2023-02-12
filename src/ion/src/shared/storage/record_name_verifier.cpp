@@ -1,6 +1,6 @@
 #include <ion/storage/record_name_verifier.h>
 
-namespace Ion2 {
+namespace Ion {
 
 
 namespace Storage {

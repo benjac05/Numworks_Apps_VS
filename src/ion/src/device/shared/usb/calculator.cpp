@@ -3,18 +3,18 @@
 #include <ion.h>
 #include <ion/usb.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 
 void Calculator::PollAndReset() {
-  /* Don't use Ion2::serialNumber to avoid any data section in the relocatable
+  /* Don't use Ion::serialNumber to avoid any data section in the relocatable
    * dfu. */
-  char serialNumber[Ion2::k_serialNumberLength+1];
+  char serialNumber[Ion::k_serialNumberLength+1];
   SerialNumber::copy(serialNumber);
   Calculator c(serialNumber, USB::stringDescriptor());
 
-  while (Ion2::USB::isPlugged() && !c.isSoftDisconnected() && !(USB::shouldInterruptDFU() && !c.isErasingAndWriting())) {
+  while (Ion::USB::isPlugged() && !c.isSoftDisconnected() && !(USB::shouldInterruptDFU() && !c.isErasingAndWriting())) {
     c.poll();
   }
 

@@ -49,9 +49,9 @@ WINRT_InitTouch(_THIS)
 //
 // Applies necessary geometric transformations to raw cursor positions:
 //
-Windows::FoundatIon2::Point
+Windows::FoundatIon::Point
 WINRT_TransformCursorPosition(SDL_Window * window,
-                              Windows::FoundatIon2::Point rawPosition,
+                              Windows::FoundatIon::Point rawPosition,
                               WINRT_CursorNormalizationType normalization)
 {
     using namespace Windows::UI::Core;
@@ -76,7 +76,7 @@ WINRT_TransformCursorPosition(SDL_Window * window,
     SDL_assert(CoreWindow::GetForCurrentThread() != nullptr);
 
     CoreWindow ^ nativeWindow = windowData->coreWindow.Get();
-    Windows::FoundatIon2::Point outputPosition;
+    Windows::FoundatIon::Point outputPosition;
 
     // Compute coordinates normalized from 0..1.
     // If the coordinates need to be sized to the SDL window,
@@ -226,8 +226,8 @@ void WINRT_ProcessPointerPressedEvent(SDL_Window *window, Windows::UI::Input::Po
     if ( ! WINRT_IsTouchEvent(pointerPoint)) {
         SDL_SendMouseButton(window, 0, SDL_PRESSED, button);
     } else {
-        Windows::FoundatIon2::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
-        Windows::FoundatIon2::Point windowPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, TransformToSDLWindowSize);
+        Windows::FoundatIon::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
+        Windows::FoundatIon::Point windowPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, TransformToSDLWindowSize);
 
         SDL_SendTouch(
             WINRT_TouchID,
@@ -247,8 +247,8 @@ WINRT_ProcessPointerMovedEvent(SDL_Window *window, Windows::UI::Input::PointerPo
         return;
     }
 
-    Windows::FoundatIon2::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
-    Windows::FoundatIon2::Point windowPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, TransformToSDLWindowSize);
+    Windows::FoundatIon::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
+    Windows::FoundatIon::Point windowPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, TransformToSDLWindowSize);
 
     if ( ! WINRT_IsTouchEvent(pointerPoint)) {
         SDL_SendMouseMotion(window, 0, 0, (int)windowPoint.X, (int)windowPoint.Y);
@@ -274,7 +274,7 @@ void WINRT_ProcessPointerReleasedEvent(SDL_Window *window, Windows::UI::Input::P
     if (!WINRT_IsTouchEvent(pointerPoint)) {
         SDL_SendMouseButton(window, 0, SDL_RELEASED, button);
     } else {
-        Windows::FoundatIon2::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
+        Windows::FoundatIon::Point normalizedPoint = WINRT_TransformCursorPosition(window, pointerPoint->Position, NormalizeZeroToOne);
 
         SDL_SendTouch(
             WINRT_TouchID,
@@ -383,8 +383,8 @@ WINRT_ProcessMouseMovedEvent(SDL_Window * window, Windows::Devices::Input::Mouse
     // to SDL with minimal transformation: from native screen coordinates (in DIPs)
     // to SDL window coordinates.
     //
-    const Windows::FoundatIon2::Point mouseDeltaInDIPs((float)args->MouseDelta.X, (float)args->MouseDelta.Y);
-    const Windows::FoundatIon2::Point mouseDeltaInSDLWindowCoords = WINRT_TransformCursorPosition(window, mouseDeltaInDIPs, TransformToSDLWindowSize);
+    const Windows::FoundatIon::Point mouseDeltaInDIPs((float)args->MouseDelta.X, (float)args->MouseDelta.Y);
+    const Windows::FoundatIon::Point mouseDeltaInSDLWindowCoords = WINRT_TransformCursorPosition(window, mouseDeltaInDIPs, TransformToSDLWindowSize);
     SDL_SendMouseMotion(
         window,
         0,

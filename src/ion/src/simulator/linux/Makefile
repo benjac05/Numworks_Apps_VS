@@ -44,7 +44,7 @@ $(eval $(call rule_for, \
   global \
 ))
 
-$(call object_for,ion/src/simulator/linux/platform_images.cpp): $(BUILD_DIR)/ion/src/simulator/linux/platform_images.h
+$(call object_for,ion/src/simulator/linux/platform_images.cpp): output/ion/src/simulator/linux/platform_images.h
 
 # The header is refered to as <ion/src/simulator/linux/platform_images.h> so make sure it's findable this way
-$(call object_for,ion/src/simulator/linux/platform_images.cpp): SFLAGS += -I$(BUILD_DIR)
+$(call object_for,ion/src/simulator/linux/platform_images.cpp): SFLAGS += -Ioutput

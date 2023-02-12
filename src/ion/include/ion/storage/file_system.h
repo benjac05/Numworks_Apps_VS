@@ -8,7 +8,7 @@
 #include "storage_delegate.h"
 #include "storage_helper.h"
 
-namespace Ion2 {
+namespace Ion {
 
 /* Storage : | Magic |             Record1                 |            Record2                  | ... | Magic |
  *           | Magic | Size1(uint16_t) | FullName1 | Body1 | Size2(uint16_t) | FullName2 | Body2 | ... | Magic |

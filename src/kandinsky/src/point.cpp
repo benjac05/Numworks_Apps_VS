@@ -1,4 +1,4 @@
-#include <kandinsky/point.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/point.h"
 #include <assert.h>
 
 KDPoint KDPoint::translatedBy(KDPoint other) const {

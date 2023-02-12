@@ -1,7 +1,7 @@
 #include <ion/timing.h>
 #include <drivers/svcall.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Timing {
 
 void SVC_ATTRIBUTES usleep(uint32_t us) {

@@ -1,5 +1,5 @@
 #include <ion.h>
 
-const char * Ion2::fccId() {
+const char * Ion::fccId() {
   return "NA";
 }

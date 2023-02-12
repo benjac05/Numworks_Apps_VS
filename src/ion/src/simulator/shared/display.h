@@ -3,7 +3,7 @@
 
 #include <SDL.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Display {
 

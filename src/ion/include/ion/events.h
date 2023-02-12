@@ -6,7 +6,7 @@
 #include <string.h>
 #endif
 
-namespace Ion2 {
+namespace Ion {
 namespace Events {
 
 class Event {
@@ -23,7 +23,7 @@ public:
   constexpr static Event ShiftAlphaKey(Keyboard::Key k) { return Event(k_shiftAlphaEventsOffset+(int)k); }
   constexpr static Event Special(int i) { return Event(k_specialEventsOffset+i); }
 
-  // Return Ion2::Event::None by default
+  // Return Ion::Event::None by default
   constexpr Event() : m_id(k_specialEventsOffset) {}
   //constexpr Event(int i) : m_id(i) { assert(static_cast<int>(m_id) == i); }
   constexpr Event(int i) : m_id(i) {}

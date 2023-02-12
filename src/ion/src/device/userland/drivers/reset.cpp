@@ -1,6 +1,6 @@
 #include "reset.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Reset {
 

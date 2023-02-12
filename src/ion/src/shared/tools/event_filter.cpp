@@ -6,8 +6,8 @@
 int main(int argc, char * argv[]) {
   unsigned char c = 0;
   while (std::cin >> c) {
-    Ion2::Events::Event e(c);
-    if (Ion2::Events::isDefined(c) && e != Ion2::Events::Termination) {
+    Ion::Events::Event e(c);
+    if (Ion::Events::isDefined(c) && e != Ion::Events::Termination) {
       std::cout << c;
     }
   }

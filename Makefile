@@ -1,45 +1,51 @@
 Q ?= @
-CC = arm-none-eabi-gcc
+#CC = arm-none-eabi-gcc
 CXX = arm-none-eabi-g++
-BUILD_DIR = target
+#RANLIB = arm-none-eabi-ranlib
+#STRIP = arm-none-eabi-strip
 NWLINK = npx --yes -- nwlink@0.0.16
 LINK_GC = 1
 LTO = 1
 
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/build/all.mak
-include src/ion/Makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/Makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/bootloader.mak
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/userland.mak
-#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/Makefile
-#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/core/os2/geniconv/makefile
-#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/hidapi/windows/ddk_build/makefile
-#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/Makefile
-#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/web/Makefile
-include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/test/device/Makefile
 
-define object_for
-$(addprefix $(BUILD_DIR)/,$(addsuffix .o,$(basename $(1))))
-endef
+objs = $(addprefix output/kandinsky/src/,\
+  color.o \
+  font.o \
+  context.o \
+  coordinate.o \
+  dot.o \
+  framebuffer.o \
+  ion_context.o \
+  measuring_context.o \
+  palette.o \
+  pixel_cache.o \
+  point.o \
+  rect.o \
+  size.o \
+)
 
-src = $(addprefix src/,\
-  main.cpp \
+
+objs += $(addprefix output/,\
+  eadkpp.o \
+  icon.o \
+  main.o \
 )
 
 CPPFLAGS = -std=c++11 -fno-exceptions
-CPPFLAGS += -Os -Wall
 CPPFLAGS += $(shell $(NWLINK) eadk-cflags)
+CPPFLAGS += -Os -Wall
+CPPFLAGS += -ggdb
+CPPFLAGS += -Isrc/kandinsky
 LDFLAGS = -Wl,--relocatable
 LDFLAGS += -nostartfiles
-LDFLAGS += --specs=nano.specs
+LDFLAGS += --specs=nosys.specs
+
+# LDFLAGS += --specs=nosys.specs # Alternatively, use full-fledged newlib
 
 ifeq ($(LINK_GC),1)
 CPPFLAGS += -fdata-sections -ffunction-sections
 LDFLAGS += -Wl,-e,main -Wl,-u,eadk_app_name -Wl,-u,eadk_app_icon -Wl,-u,eadk_api_level
 LDFLAGS += -Wl,--gc-sections
-LDGLAGS += -Wl, -u, 
 endif
 
 ifeq ($(LTO),1)
@@ -49,35 +55,42 @@ CPPFLAGS += -fvisibility=internal
 LDFLAGS += -flinker-output=nolto-rel
 endif
 
+include src/kandinsky/Makefile
+
 .PHONY: build
-build: $(BUILD_DIR)/output.bin
+build: output/kandinsky.nwa
+
+.PHONY: check
+check: output/kandinsky.bin
 
 .PHONY: run
-run: $(BUILD_DIR)/output.nwa
+run: output/kandinsky.nwa
 	@echo "INSTALL $<"
 	$(Q) $(NWLINK) install-nwa $<
 
-$(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.nwa
+output/%.bin: output/%.nwa
 	@echo "BIN     $@"
 	$(Q) $(NWLINK) nwa-bin $< $@
 
-$(BUILD_DIR)/output.nwa: $(call object_for,$(src)) $(BUILD_DIR)/icon.o
+output/%.elf: output/%.nwa
+	@echo "ELF     $@"
+	$(Q) $(NWLINK) nwa-elf $< $@
+
+output/kandinsky.nwa: $(objs)
 	@echo "LD      $@"
-	$(Q) $(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
+	$(Q) $(CXX) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
 
-$(addprefix $(BUILD_DIR)/,%.o): %.cpp | $(BUILD_DIR)
-	@echo "CXX     $^"
-	$(Q) $(CXX) $(CPPFLAGS) $(SFLAGS) -c $^ -o $@
+output/%.o: src/%.cpp
+	@mkdir -p $(@D)
+	@echo "CXX      $^"
+	$(Q) $(CXX) $(CPPFLAGS) -c $^ -o $@
 
-$(BUILD_DIR)/icon.o: src/assets/icon.png
+
+output/icon.o: src/icon.png
 	@echo "ICON    $<"
 	$(Q) $(NWLINK) png-icon-o $< $@
-
-.PRECIOUS: $(BUILD_DIR)
-$(BUILD_DIR):
-	$(Q) mkdir -p $@/src
 
 .PHONY: clean
 clean:
 	@echo "CLEAN"
-	$(Q) rm -rf $(BUILD_DIR)
+	$(Q) rm -rf output

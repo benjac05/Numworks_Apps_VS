@@ -20,7 +20,7 @@
 #include "stack/descriptor/url_descriptor.h"
 #include "stack/descriptor/webusb_platform_descriptor.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 

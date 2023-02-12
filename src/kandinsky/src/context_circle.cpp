@@ -1,7 +1,7 @@
 /* Based on https://cs.uwaterloo.ca/research/tr/1984/CS-84-38.pdf
  * Algorithms for drawing anti-aliased circles and ellipses
  * Dan Field */
-#include <kandinsky/context.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
 
 #include <cmath>
 

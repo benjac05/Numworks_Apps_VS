@@ -1,7 +1,7 @@
 #include "../shared/window.h"
 #include <emscripten.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Window {
 

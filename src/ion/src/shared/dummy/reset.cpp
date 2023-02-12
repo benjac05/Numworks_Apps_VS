@@ -1,6 +1,6 @@
 #include <ion/reset.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Reset {
 
 void core() {}

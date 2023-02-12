@@ -1,7 +1,7 @@
 #include <drivers/reset.h>
 #include <drivers/svcall.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Reset {
 
 void SVC_ATTRIBUTES core() {

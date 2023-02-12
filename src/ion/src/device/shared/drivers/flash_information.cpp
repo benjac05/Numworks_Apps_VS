@@ -3,7 +3,7 @@
 #include <config/external_flash.h>
 #include "flash_information.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Flash {
 

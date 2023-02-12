@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/persisting_bytes.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace PersistingBytes {
 
 void SVC_ATTRIBUTES write(PersistingBytesInt value) {

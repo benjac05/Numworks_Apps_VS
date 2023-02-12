@@ -40,7 +40,7 @@ ifndef ARCH
 
 SIMULATOR_ICON_SIZES = 20x20 29x29 40x40 40x40 40x40 58x58 58x58 60x60 76x76 \
   80x80 80x80 87x87 120x120 120x120 152x152 167x167 180x180 1024x1024
-SIMULATOR_ASSETS_PATH = $(BUILD_DIR)/app/assets/Assets.xcassets
+SIMULATOR_ASSETS_PATH = output/app/assets/Assets.xcassets
 SIMULATOR_ICONSET = $(SIMULATOR_ASSETS_PATH)/AppIcon.appiconset
 
 include ion/src/simulator/shared/apple/helpers.mak
@@ -61,8 +61,8 @@ $(call simulator_app_plist,Info.plist): ion/src/simulator/ios/Info.plist $(call 
 	$(Q) plutil -insert "CFBundleVersion" -string "$(EPSILON_VERSION)" $@
 	$(Q) plutil -insert "CFBundleShortVersionString" -string "$(EPSILON_VERSION)" $@
 	$(Q) $(foreach capability,$(UI_REQUIRED_CAPABILITIES),plutil -insert "UIRequiredDeviceCapabilities.0" -string "$(capability)" $@ ;)
-	$(Q) plutil -replace CFBundleIcons -json `plutil -extract CFBundleIcons json -o - $(BUILD_DIR)/app/assets/partial.plist` $@
-	$(Q) plutil -replace CFBundleIcons~ipad -json `plutil -extract CFBundleIcons~ipad json -o - $(BUILD_DIR)/app/assets/partial.plist` $@
+	$(Q) plutil -replace CFBundleIcons -json `plutil -extract CFBundleIcons json -o - output/app/assets/partial.plist` $@
+	$(Q) plutil -replace CFBundleIcons~ipad -json `plutil -extract CFBundleIcons~ipad json -o - output/app/assets/partial.plist` $@
 
 $(call simulator_app_resource,launch.storyboardc): ion/src/simulator/ios/launch.storyboard | $$(@D)/.
 	$(call rule_label,IBTOOL)
@@ -73,11 +73,11 @@ $(call simulator_app_resource,embedded.mobileprovision): $(IOS_PROVISIONNING_PRO
 	$(call rule_label,COPY)
 	$(Q) cp $^ $@
 
-$(BUILD_DIR)/app/entitlements.plist: $(IOS_PROVISIONNING_PROFILE)
+output/app/entitlements.plist: $(IOS_PROVISIONNING_PROFILE)
 	$(call rule_label,SCMS)
 	$(Q) security cms -D -i $(IOS_PROVISIONNING_PROFILE) | plutil -extract Entitlements xml1 - -o $@
 
-simulator_app_deps += $(BUILD_DIR)/app/entitlements.plist
+simulator_app_deps += output/app/entitlements.plist
 simulator_app_deps += $(call simulator_app_resource,embedded.mobileprovision)
 else
 $(call simulator_app_resource,embedded.mobileprovision):
@@ -90,7 +90,7 @@ $(SIMULATOR_ICONSET)/Contents.json: ion/src/simulator/ios/icon_assets.json $(SIM
 
 $(call simulator_app_resource,Assets.car): $(SIMULATOR_ICONSET)/Contents.json | $$(@D)/.
 	$(call rule_label,ACTOOL)
-	$(Q) $(ACTOOL) --compile $(BUILD_DIR)/$*.app --minimum-deployment-target $(APPLE_PLATFORM_MIN_VERSION) --platform $(APPLE_SDK) --app-icon AppIcon --output-partial-info-plist $(BUILD_DIR)/app/assets/partial.plist $(SIMULATOR_ASSETS_PATH) > /dev/null
+	$(Q) $(ACTOOL) --compile output/$*.app --minimum-deployment-target $(APPLE_PLATFORM_MIN_VERSION) --platform $(APPLE_SDK) --app-icon AppIcon --output-partial-info-plist output/app/assets/partial.plist $(SIMULATOR_ASSETS_PATH) > /dev/null
 
 simulator_app_deps += $(call simulator_app_resource,Assets.car)
 simulator_app_deps += $(call simulator_app_resource,launch.storyboardc)

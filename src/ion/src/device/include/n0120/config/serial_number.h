@@ -3,7 +3,7 @@
 
 #include <regs/regs.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace SerialNumber {
 namespace Config {

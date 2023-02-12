@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/backlight.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Backlight {
 
 void SVC_ATTRIBUTES setBrightness(uint8_t b) {

@@ -13,7 +13,7 @@ extern "C" {
   extern uint8_t _external_apps_flash_end;
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace ExternalApps {
 
 /* The ExternalApp start with its info layout as:
@@ -102,15 +102,15 @@ void * App::entryPoint() const {
 void App::eraseMagicCode() {
   assert(appAtAddress(m_startAddress));
   uint8_t value = 0x00;
-  Ion2::Device::Flash::WriteMemoryWithInterruptions(m_startAddress, reinterpret_cast<uint8_t *>(&value), sizeof(value), true);
+  Ion::Device::Flash::WriteMemoryWithInterruptions(m_startAddress, reinterpret_cast<uint8_t *>(&value), sizeof(value), true);
 }
 
 uint8_t * nextSectorAlignedAddress(uint8_t * address) {
   // Trick to return address if it was already aligned
   address -= 1;
   // Find previous aligned address
-  address = reinterpret_cast<uint8_t *>(reinterpret_cast<uint32_t>(address) & ~(Ion2::Device::Board::Config::ExternalAppsSectorUnit - 1));
-  address += Ion2::Device::Board::Config::ExternalAppsSectorUnit;
+  address = reinterpret_cast<uint8_t *>(reinterpret_cast<uint32_t>(address) & ~(Ion::Device::Board::Config::ExternalAppsSectorUnit - 1));
+  address += Ion::Device::Board::Config::ExternalAppsSectorUnit;
   return address;
 }
 

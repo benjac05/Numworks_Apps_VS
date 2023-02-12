@@ -1,6 +1,6 @@
 #include <ion/unicode/utf8_helper.h>
 #include <ion/unicode/utf8_decoder.h>
-#include <kandinsky/font.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/font.h"
 #include <string.h>
 #include <assert.h>
 #include <algorithm>

@@ -2,7 +2,7 @@
 #include "keyboard.h"
 #include "events.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Keyboard {
 
 Queue * Queue::sharedQueue() {

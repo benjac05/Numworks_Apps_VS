@@ -37,19 +37,19 @@ endif
 
 DEFAULT = epsilon.zip
 
-$(addprefix $(BUILD_DIR)/ion/src/simulator/web/,calculator.html calculator.css): ion/src/simulator/shared/layout.json ion/src/simulator/web/css_html_layout.py | $$(@D)/.
+$(addprefix output/ion/src/simulator/web/,calculator.html calculator.css): ion/src/simulator/shared/layout.json ion/src/simulator/web/css_html_layout.py | $$(@D)/.
 	$(call rule_label,LAYOUT)
-	$(Q) $(PYTHON) ion/src/simulator/web/css_html_layout.py --html $(BUILD_DIR)/ion/src/simulator/web/calculator.html --css $(BUILD_DIR)/ion/src/simulator/web/calculator.css $<
+	$(Q) $(PYTHON) ion/src/simulator/web/css_html_layout.py --html output/ion/src/simulator/web/calculator.html --css output/ion/src/simulator/web/calculator.css $<
 
-$(BUILD_DIR)/ion/src/simulator/web/simulator.html: $(addprefix $(BUILD_DIR)/ion/src/simulator/web/,calculator.html calculator.css)
+output/ion/src/simulator/web/simulator.html: $(addprefix output/ion/src/simulator/web/,calculator.html calculator.css)
 
-$(BUILD_DIR)/epsilon%zip: $(BUILD_DIR)/epsilon%js $(BUILD_DIR)/ion/src/simulator/web/simulator.html $(BUILD_DIR)ion/src/simulator/assets/background.jpg
+output/epsilon%zip: output/epsilon%js output/ion/src/simulator/web/simulator.html outpution/src/simulator/assets/background.jpg
 	@rm -rf $(basename $@)
 	@mkdir -p $(basename $@)
 	@cp $< $(basename $@)/epsilon.js
 	@cp ion/src/simulator/assets/background-with-shadow.webp $(basename $@)/
-	@cp $(BUILD_DIR)/ion/src/simulator/assets/background.jpg $(basename $@)/
-	@cp $(BUILD_DIR)/ion/src/simulator/web/simulator.html $(basename $@)/
+	@cp output/ion/src/simulator/assets/background.jpg $(basename $@)/
+	@cp output/ion/src/simulator/web/simulator.html $(basename $@)/
 	$(call rule_label,ZIP)
 	@zip -r -9 -j $@ $(basename $@) > /dev/null
 	@rm -rf $(basename $@)

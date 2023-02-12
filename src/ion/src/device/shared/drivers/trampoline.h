@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Trampoline {
 
@@ -27,7 +27,7 @@ namespace Trampoline {
 #define TRAMPOLINE_INTERFACE(index, function, argsList, returnType, args...) \
   typedef returnType (*FunctionType##_##function)(args); \
   returnType function(args) { \
-    FunctionType##_##function * trampolineFunction = reinterpret_cast<FunctionType##_##function *>(Ion2::Device::Trampoline::addressOfFunction(index)); \
+    FunctionType##_##function * trampolineFunction = reinterpret_cast<FunctionType##_##function *>(Ion::Device::Trampoline::addressOfFunction(index)); \
     return (*trampolineFunction)argsList; \
   } \
 

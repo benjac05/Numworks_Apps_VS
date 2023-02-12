@@ -1,7 +1,7 @@
 #include <ion/circuit_breaker.h>
 #include <assert.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace CircuitBreaker {
 
 Status status() {

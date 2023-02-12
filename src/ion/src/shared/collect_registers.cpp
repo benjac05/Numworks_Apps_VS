@@ -1,7 +1,7 @@
 #include <ion.h>
 #include <setjmp.h>
 
-namespace Ion2 {
+namespace Ion {
 
 /* Forbid inlining to ensure dummy to be at the top of the stack. Otherwise,
  * LTO inlining can make regs lower on the stack than some just-allocated

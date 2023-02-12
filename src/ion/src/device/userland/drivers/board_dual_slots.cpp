@@ -5,7 +5,7 @@ extern "C" {
 extern char _external_apps_flash_start;
 }
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace Board {
 

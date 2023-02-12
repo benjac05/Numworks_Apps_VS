@@ -1,8 +1,8 @@
 #ifndef KANDINSKY_FRAMEBUFFER_H
 #define KANDINSKY_FRAMEBUFFER_H
 
-#include <kandinsky/color.h>
-#include <kandinsky/rect.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/src/rect.cpp"
 
 class KDFrameBuffer {
 public:

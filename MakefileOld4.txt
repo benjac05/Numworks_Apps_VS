@@ -1,0 +1,106 @@
+#Q ?= @
+CC = arm-none-eabi-gcc
+CXX = arm-none-eabi-g++
+BUILD_DIR = target
+NWLINK = npx --yes -- nwlink@0.0.16
+LINK_GC = 1
+LTO = 1
+
+objs = $(addprefix output/kandinsky/,\
+  color.o \
+  context.o \
+  coordinate.o \
+  dot.o \
+  font.o \
+  framebuffer.o \
+  ion_context.o \
+  measuring_context.o \
+  palette.o \
+  pixel_cache.o \
+  point.o \
+  rect.o \
+  size.o \
+)
+
+objs += $(addprefix output/,\
+  eadkpp.o \
+  main.o \
+  icon.o \
+)
+
+
+
+define object_for
+$(addprefix output/,$(addsuffix .o,$(basename $(1))))
+endef
+#defines a function that acts like a "for loop" and adds target/ to the beginning and .o to the end of each file
+#should return target/src/main.cpp.o or main.o?
+
+src = $(addprefix src/,\
+  main.cpp \
+)
+
+CPPFLAGS = -std=c++11 -fno-exceptions
+CPPFLAGS += -Os -Wall
+CPPFLAGS += $(shell $(NWLINK) eadk-cflags)
+CPPFLAGS += -I/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky
+LDFLAGS = -Wl,--relocatable
+LDFLAGS += -nostartfiles
+LDFLAGS += --specs=nano.specs
+
+ifeq ($(LINK_GC),1)
+CPPFLAGS += -fdata-sections -ffunction-sections
+LDFLAGS += -Wl,-e,main -Wl,-u,eadk_app_name -Wl,-u,eadk_app_icon -Wl,-u,eadk_api_level
+LDFLAGS += -Wl,--gc-sections
+endif
+
+ifeq ($(LTO),1)
+CPPFLAGS += -flto -fno-fat-lto-objects
+CPPFLAGS += -fwhole-program
+CPPFLAGS += -fvisibility=internal
+LDFLAGS += -flinker-output=nolto-rel
+endif
+
+.PHONY: build
+build: output/testApp.bin
+
+.PHONY: run
+run: output/testApp.nwa
+	@echo "INSTALL $<"
+	$(Q) $(NWLINK) install-nwa $<
+
+output/%.bin: output/%.nwa
+	@echo "BIN     $@"
+	$(Q) $(NWLINK) nwa-bin $< $@
+
+output/%.elf: output/%.nwa
+	@echo "ELF     $@"
+	$(Q) $(NWLINK) nwa-elf $< $@
+
+
+
+output/testApp.nwa: $(objs) $(call object_for,$(src)) output/icon.o
+	@echo "LD      $@"
+	$(Q) $(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
+
+#output/testApp.nwa: $(objs)
+#	@echo "LD      $@"
+#	$(Q) $(CC) $(CPPFLAGS) $(LDFLAGS) $^ -o $@
+
+$(addprefix output/,%.o): %.cpp | output
+	@echo "CXX     $^"
+	$(Q) $(CXX) $(CPPFLAGS) $(SFLAGS) -c $^ -o $@
+
+output/icon.o: src/icon.png
+	@echo "ICON    $<"
+	$(Q) $(NWLINK) png-icon-o $< $@
+
+.PRECIOUS: output
+output:
+	$(Q) mkdir -p $@/src
+
+
+.PHONY: clean
+clean:
+	@echo "CLEAN"
+	$(Q) rm -rf output

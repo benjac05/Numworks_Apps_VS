@@ -39,7 +39,7 @@ SIMULATOR_ICON_USE_MASK = 1
 SIMULATOR_APP_BINARY_PATH = Contents/MacOS/
 SIMULATOR_APP_RESOURCE_PATH = Contents/Resources/
 SIMULATOR_APP_PLIST_PATH = Contents/
-SIMULATOR_ICONSET = $(BUILD_DIR)/app/assets/app.iconset
+SIMULATOR_ICONSET = output/app/assets/app.iconset
 
 include ion/src/simulator/shared/apple/helpers.mak
 

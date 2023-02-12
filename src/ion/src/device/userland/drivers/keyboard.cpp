@@ -1,7 +1,7 @@
 #include <drivers/svcall.h>
 #include <ion/keyboard.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Keyboard {
 
 uint64_t SVC_ATTRIBUTES privateScan() {

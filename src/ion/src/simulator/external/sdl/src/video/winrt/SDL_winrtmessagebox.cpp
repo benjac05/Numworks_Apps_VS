@@ -95,12 +95,12 @@ WINRT_ShowMessageBox(const SDL_MessageBoxData *messageboxdata, int *buttonid)
     /* Display the MessageDialog, then wait for it to be closed */
     /* TODO, WinRT: Find a way to redraw MessageDialog instances if a GPU device-reset occurs during the following event-loop */
     auto operation = dialog->ShowAsync();
-    while (operation->Status == Windows::FoundatIon2::AsyncStatus::Started) {
+    while (operation->Status == Windows::FoundatIon::AsyncStatus::Started) {
         WINRT_PumpEvents(_this);
     }
 
     /* Retrieve results from the MessageDialog and process them accordingly */
-    if (operation->Status != Windows::FoundatIon2::AsyncStatus::Completed) {
+    if (operation->Status != Windows::FoundatIon::AsyncStatus::Completed) {
         return SDL_SetError("An unknown error occurred in displaying the WinRT MessageDialog");
     }
     if (buttonid) {

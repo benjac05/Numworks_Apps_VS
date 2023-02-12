@@ -1,9 +1,9 @@
 #ifndef KANDINSKY_CONTEXT_H
 #define KANDINSKY_CONTEXT_H
 
-#include <kandinsky/color.h>
-#include <kandinsky/font.h>
-#include <kandinsky/rect.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/font.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/rect.h"
 
 class KDContext {
 public:

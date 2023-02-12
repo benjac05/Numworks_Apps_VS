@@ -1,7 +1,7 @@
 #include <ion/persisting_bytes.h>
 #include <assert.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace PersistingBytes {
 
 PersistingBytesInt s_persistedBytes = 0;

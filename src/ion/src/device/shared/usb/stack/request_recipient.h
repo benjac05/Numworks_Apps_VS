@@ -4,7 +4,7 @@
 #include "endpoint0.h"
 #include "setup_packet.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 

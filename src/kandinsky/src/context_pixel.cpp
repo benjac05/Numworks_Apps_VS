@@ -1,4 +1,4 @@
-#include <kandinsky/context.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
 
 void KDContext::setPixel(KDPoint p, KDColor c) {
   KDPoint absolutePoint = p.translatedBy(m_origin);

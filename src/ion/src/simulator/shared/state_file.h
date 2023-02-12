@@ -1,7 +1,7 @@
 #ifndef ION_SIMULATOR_STATE_FILE_H
 #define ION_SIMULATOR_STATE_FILE_H
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace StateFile {
 

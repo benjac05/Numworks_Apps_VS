@@ -1,6 +1,6 @@
 #include <ion.h>
 
-namespace Ion2 {
+namespace Ion {
 
 // Stack start will be defined in ion_main.
 static void * s_stackStart = nullptr;

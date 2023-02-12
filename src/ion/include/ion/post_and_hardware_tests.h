@@ -1,7 +1,7 @@
 #ifndef ION_DEVICE_SHARED_POST_AND_HARDWARE_TESTS_H
 #define ION_DEVICE_SHARED_POST_AND_HARDWARE_TESTS_H
 
-namespace Ion2 {
+namespace Ion {
 namespace POSTAndHardwareTests {
 
 // Tests if battery is Full

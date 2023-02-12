@@ -1,4 +1,4 @@
-#include <kandinsky/rect.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/rect.h"
 #include <algorithm>
 
 KDRect KDRect::translatedBy(KDPoint p) const {

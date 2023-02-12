@@ -3,7 +3,7 @@
 #include "keyboard_queue.h"
 #include <ion/keyboard.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Keyboard {
 
 State popState() {

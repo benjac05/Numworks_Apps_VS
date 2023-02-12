@@ -1,9 +1,9 @@
 #ifndef KANDINSKY_PIXEL_CACHE_H
 #define KANDINSKY_PIXEL_CACHE_H
 
-#include <kandinsky/color.h>
-#include <kandinsky/context.h>
-#include <kandinsky/rect.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/color.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/rect.h"
 
 class KDAbstractPixelCache {
 public:

@@ -1,6 +1,6 @@
 #include "../platform.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Telemetry {
 

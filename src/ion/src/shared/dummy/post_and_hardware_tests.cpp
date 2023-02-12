@@ -1,6 +1,6 @@
 #include <ion/post_and_hardware_tests.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace POSTAndHardwareTests {
 
 bool BatteryOK() {

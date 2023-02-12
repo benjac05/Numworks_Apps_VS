@@ -11,7 +11,7 @@
 
 #include <signal.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Simulator {
 namespace Actions {
 

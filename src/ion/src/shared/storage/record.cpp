@@ -3,7 +3,7 @@
 #include<iostream>
 #endif
 
-namespace Ion2 {
+namespace Ion {
 
 namespace Storage {
 
@@ -39,9 +39,9 @@ Record::Record(Record::Name name) {
   }
   // We compute the CRC32 of the CRC32s of the basename and the extension
   uint32_t crc32Results[2];
-  crc32Results[0] = Ion2::crc32Byte((const uint8_t *)name.baseName, name.baseNameLength);
-  crc32Results[1] = Ion2::crc32Byte((const uint8_t *)name.extension, strlen(name.extension));
-  m_fullNameCRC32 = Ion2::crc32Word(crc32Results, 2);
+  crc32Results[0] = Ion::crc32Byte((const uint8_t *)name.baseName, name.baseNameLength);
+  crc32Results[1] = Ion::crc32Byte((const uint8_t *)name.extension, strlen(name.extension));
+  m_fullNameCRC32 = Ion::crc32Word(crc32Results, 2);
 }
 
 Record::Record(const char * fullName) : Record(CreateRecordNameFromFullName(fullName)) {}
@@ -61,8 +61,8 @@ uint32_t Record::checksum() const {
   uint32_t crc32Results[2];
   crc32Results[0] = m_fullNameCRC32;
   Data data = value();
-  crc32Results[1] = Ion2::crc32Byte((const uint8_t *)data.buffer, data.size);
-  return Ion2::crc32Word(crc32Results, 2);
+  crc32Results[1] = Ion::crc32Byte((const uint8_t *)data.buffer, data.size);
+  return Ion::crc32Word(crc32Results, 2);
 }
 
 

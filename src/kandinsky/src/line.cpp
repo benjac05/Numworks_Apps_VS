@@ -1,5 +1,5 @@
-#include <kandinsky/line.h>
-#include <kandinsky/pixel.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/line.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/pixel.h"
 #include <assert.h>
 
 void KDDrawLine(KDPoint p1, KDPoint p2, KDColor c) {

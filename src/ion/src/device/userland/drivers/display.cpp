@@ -3,7 +3,7 @@
 #include <kandinsky/ion_context.h>
 #include <ion/display.h>
 
-namespace Ion2 {
+namespace Ion {
 namespace Display {
 
 void SVC_ATTRIBUTES pushRect(KDRect r, const KDColor * pixels) {

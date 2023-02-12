@@ -1,0 +1,125 @@
+Q ?= @
+CC = arm-none-eabi-gcc
+CXX = arm-none-eabi-g++
+BUILD_DIR = target
+RANLIB = arm-none-eabi-ranlib
+STRIP = arm-none-eabi-strip
+NWLINK = npx --yes -- nwlink@0.0.16
+
+
+LINK_GC = 1
+LTO = 1
+
+
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/build/all.mak
+#include src/ion/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/bootloader.mak
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/flasher.mak
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/userland.mak
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/core/os2/geniconv/makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/external/sdl/src/hidapi/windows/ddk_build/makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/web/Makefile
+#include /Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/test/device/Makefile
+
+LIBS_PATH = $(shell pwd)/output/libs
+
+define object_for
+$(addprefix output/,$(addsuffix .o,$(basename $(1))))
+endef
+
+#given a filename, add target/ before it and .o after
+
+src = $(addprefix src/,\
+  main.cpp \
+)
+
+
+
+CPPFLAGS = -std=c++11 -fno-exceptions
+CPPFLAGS += -Os -Wall
+CPPFLAGS += $(shell $(NWLINK) eadk-cflags)
+LDFLAGS = -Wl,--relocatable
+LDFLAGS += -nostartfiles
+LDFLAGS += --specs=nano.specs
+LDFLAGS += -L$(LIBS_PATH)/lib
+
+ifeq ($(LINK_GC),1)
+CPPFLAGS += -fdata-sections -ffunction-sections
+LDFLAGS += -Wl,-e,main -Wl,-u,eadk_app_name -Wl,-u,eadk_app_icon -Wl,-u,eadk_api_level
+LDFLAGS += -Wl,--gc-sections
+endif
+
+ifeq ($(LTO),1)
+AR = arm-none-eabi-gcc-ar
+RANLIB = arm-none-eabi-gcc-ranlib
+CPPFLAGS += -flto -fno-fat-lto-objects
+CPPFLAGS += -fwhole-program
+CPPFLAGS += -fvisibility=internal
+LDFLAGS += -flinker-output=nolto-rel
+endif
+
+.PHONY: build
+build: output/output.bin
+
+#External Libraries
+
+LIBS_CFLAGS = $(CFLAGS) - -I$(LIBS_PATH)/incluce --specs=nosys.specs
+
+AUTOCONF_FLAGS = --host=arm-none-eabi
+AUTOCONF_FLAGS += --prefix=$(LIBS_PATH)
+AUTOCONF_FLAGS += CFLAGS="$(LIBS_CFLAGS)"
+
+ifeq ($(LTO),1)
+AUTOCONF_FLAGS += AR="arm-none-eabi-gcc-ar" RANLIB="arm-none-eabi-gcc-ranlib"
+endif
+
+libs = $(addprefix output/libs/lib/,libkandinsky.a libion.a libbuild.a)
+
+define autoconf
+output/libs/lib/lib$(1).a:
+	@mkdir -p output/autoconf/$(1)
+	@echo "AUTOCNF $(1)"
+	$(Q) cd output/autoconf/$(1) && ../../../src/$(1)/configure $(2) $(AUTOCONF_FLAGS) > configure.log 2>&1
+	@echo "MAKE    $(1)"
+	$(Q) cd output/autoconf/$(1) && make install > make.log 2>&1
+endef
+
+$(eval $(call autoconf,kandinsky,--disable-assembly))
+$(eval $(call autoconf,ion,--disable-assembly))
+$(eval $(call autoconf,build,--disable-assembly))
+
+
+
+.PHONY: run
+run: output/output.nwa
+	@echo "INSTALL $<"
+	$(Q) $(NWLINK) install-nwa $<
+
+output/%.bin: output/%.nwa
+	@echo "BIN     $@"
+	$(Q) $(NWLINK) nwa-bin $< $@
+
+output/output.nwa: $(call object_for,$(src)) output/icon.o
+	@echo "LD      $@"
+	$(Q) $(CC) $(CPPFLAGS) $(LDFLAGS) $^ -lion -lkandinsky -lbuild -o $@
+
+$(addprefix output/,%.o): %.cpp | output
+	@echo "CXX     $^"
+	$(Q) $(CXX) $(CPPFLAGS) $(SFLAGS) -c $^ -lion -lkandinsky -lbuild -o $@
+
+output/icon.o: src/assets/icon.png
+	@echo "ICON    $<"
+	$(Q) $(NWLINK) png-icon-o $< $@
+
+.PRECIOUS: output
+output:
+	$(Q) mkdir -p $@/src
+
+.PHONY: clean
+clean:
+	@echo "CLEAN"
+	$(Q) rm -rf output

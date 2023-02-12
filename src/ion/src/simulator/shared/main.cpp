@@ -123,7 +123,7 @@ static inline int load_eadk_external_data(const char * path) {
 }
 #endif
 
-using namespace Ion2::Simulator;
+using namespace Ion::Simulator;
 
 int main(int argc, char * argv[]) {
   Args args(argc, argv);
@@ -152,15 +152,15 @@ int main(int argc, char * argv[]) {
 
   const char * screenshotPath = args.pop("--take-screenshot");
   if (screenshotPath) {
-    Ion2::Simulator::Screenshot::commandlineScreenshot()->init(screenshotPath);
+    Ion::Simulator::Screenshot::commandlineScreenshot()->init(screenshotPath);
   }
 
   const char * allScreenshotsFolder = args.pop("--take-all-screenshots");
   if (allScreenshotsFolder) {
-    Ion2::Simulator::Screenshot::commandlineScreenshot()->initEachStep(allScreenshotsFolder);
+    Ion::Simulator::Screenshot::commandlineScreenshot()->initEachStep(allScreenshotsFolder);
   }
 #if !defined(_WIN32)
-  signal(SIGUSR1, Ion2::Simulator::Actions::handleUSR1Sig);
+  signal(SIGUSR1, Ion::Simulator::Actions::handleUSR1Sig);
 #endif
 #endif
 

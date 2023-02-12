@@ -3,7 +3,7 @@
 
 #include "descriptor.h"
 
-namespace Ion2 {
+namespace Ion {
 namespace Device {
 namespace USB {
 
