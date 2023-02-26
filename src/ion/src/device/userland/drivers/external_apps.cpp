@@ -1,7 +1,7 @@
-#include <ion/external_apps.h>
-#include <drivers/board.h>
-#include <config/board.h>
-#include <shared/drivers/flash_write_with_interruptions.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/external_apps.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/flash_write_with_interruptions.h"
 #include <assert.h>
 
 #ifndef EXTERNAL_APPS_API_LEVEL

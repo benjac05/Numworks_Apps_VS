@@ -1,6 +1,6 @@
 #include <assert.h>
-#include <config/board.h>
-#include <config/external_flash.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/external_flash.h"
 #include "flash_information.h"
 
 namespace Ion {

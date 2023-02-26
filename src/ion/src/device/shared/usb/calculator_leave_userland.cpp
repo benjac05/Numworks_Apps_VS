@@ -1,9 +1,9 @@
-#include <config/board.h>
-#include <drivers/board.h>
-#include <drivers/reset.h>
-#include <shared/drivers/usb.h>
-#include <shared/drivers/userland_header.h>
-#include <shared/usb/calculator.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/reset.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/usb.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/userland_header.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/usb/calculator.h"
 
 extern "C" {
 extern char _external_apps_flash_start;

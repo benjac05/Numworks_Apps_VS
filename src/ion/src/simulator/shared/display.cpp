@@ -2,7 +2,7 @@
 #include "actions.h"
 #include "framebuffer.h"
 #include <assert.h>
-#include <ion/display.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/display.h"
 #include <SDL.h>
 #include <string.h>
 

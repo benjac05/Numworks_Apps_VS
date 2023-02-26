@@ -1,8 +1,8 @@
-#include <ion/usb.h>
-#include <ion/authentication.h>
-#include <drivers/svcall.h>
-#include <drivers/usb.h>
-#include <shared/drivers/board_shared.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/usb.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/authentication.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/svcall.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/usb.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/board_shared.h"
 
 namespace Ion {
 namespace USB {

@@ -46,5 +46,5 @@ $(eval $(call rule_for, \
 
 $(call object_for,ion/src/simulator/linux/platform_images.cpp): output/ion/src/simulator/linux/platform_images.h
 
-# The header is refered to as <ion/src/simulator/linux/platform_images.h> so make sure it's findable this way
+# The header is refered to as "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/platform_images.h" so make sure it's findable this way
 $(call object_for,ion/src/simulator/linux/platform_images.cpp): SFLAGS += -Ioutput

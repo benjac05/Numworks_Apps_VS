@@ -1,4 +1,4 @@
-#include <config/board.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
 
 namespace Ion {
 namespace Device {

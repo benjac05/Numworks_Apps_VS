@@ -1,5 +1,5 @@
-#include <ion/console.h>
-#include <ion/telemetry.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/console.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/telemetry.h"
 
 void Ion::Telemetry::reportScreen(const char * screenName) {
   Console::writeLine("TelemetryScreen: ", false);

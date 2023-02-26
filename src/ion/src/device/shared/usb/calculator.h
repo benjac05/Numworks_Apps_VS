@@ -3,8 +3,8 @@
 
 #include <stddef.h>
 #include <assert.h>
-#include <config/internal_flash.h>
-#include <drivers/usb.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/internal_flash.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/usb.h"
 #include "dfu_interface.h"
 #include "stack/device.h"
 #include "stack/descriptor/bos_descriptor.h"

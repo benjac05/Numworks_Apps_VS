@@ -1,6 +1,6 @@
-#include <ion/events.h>
-#include <ion/timing.h>
-#include <ion/display.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/events.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/timing.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/display.h"
 #include "../../../poincare/include/poincare/print_int.h"
 #include <assert.h>
 

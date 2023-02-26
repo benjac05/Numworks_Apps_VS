@@ -1,7 +1,8 @@
-#include <drivers/display.h>
-#include <drivers/svcall.h>
-#include <kandinsky/ion_context.h>
-#include <ion/display.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/svcall.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/ion_context.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/display.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/eadkpp.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/eadk_palette.h"
 
 namespace Ion {
 namespace Display {
@@ -11,7 +12,8 @@ void SVC_ATTRIBUTES pushRect(KDRect r, const KDColor * pixels) {
 }
 
 void SVC_ATTRIBUTES pushRectUniform(KDRect r, KDColor c) {
-  SVC_RETURNING_VOID(SVC_DISPLAY_PUSH_RECT_UNIFORM)
+  //SVC_RETURNING_VOID(SVC_DISPLAY_PUSH_RECT_UNIFORM)
+  EADK::Display::pushRectUniform(EADK::Rect(r.left(), r.top(), r.width(), r.height()), c.toRGB24());
 }
 
 void SVC_ATTRIBUTES pullRect(KDRect r, KDColor * pixels) {
@@ -27,10 +29,7 @@ void SVC_ATTRIBUTES POSTPushMulticolor(int rootNumberTiles, int tileSize) {
 }
 
 void drawString(const char * text, KDPoint point, bool largeFont, KDColor textColor, KDColor backgroundColor) {
-  KDContext * ctx = KDIonContext::SharedContext();
-  ctx->setOrigin(KDPointZero);
-  ctx->setClippingRect(KDRectScreen);
-  ctx->drawString(text, point, largeFont ? KDFont::Size::Large : KDFont::Size::Small, textColor, backgroundColor, 255);
+  EADK::Display::drawString(text, EADK::Point(point.x(), point.y()), largeFont, EADK::Color(textColor.toRGB24()), EADK::Color(backgroundColor.toRGB24()));
 }
 
 void setScreenshotCallback(void(*)(void)) {

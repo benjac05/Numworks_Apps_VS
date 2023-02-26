@@ -1,5 +1,5 @@
 #include "base64.h"
-#include <config/serial_number.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/serial_number.h"
 #include "serial_number.h"
 #include <ion.h>
 

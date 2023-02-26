@@ -3,8 +3,8 @@
 
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/unicode/code_point.h"
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/coordinate.h"
-//#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/LargeFont.h"
-//#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/SmallFont.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/LargeFont.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/SmallFont.h"
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/code_points.h"
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/fonts/font_constants.h"
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/size.h"
@@ -47,7 +47,8 @@ public:
   constexpr static KDCoordinate GlyphWidth(Size size) { return size == Size::Small ? SmallFont::k_glyphWidth : LargeFont::k_glyphWidth; }
   constexpr static KDCoordinate GlyphHeight(Size size) { return size == Size::Small ? SmallFont::k_glyphHeight : LargeFont::k_glyphHeight; }
   constexpr static KDSize GlyphSize(Size size) { return KDSize(GlyphWidth(size), GlyphHeight(size)); }
-  constexpr static int k_maxGlyphPixelCount = std::max({SmallFont::k_glyphWidth * SmallFont::k_glyphHeight, LargeFont::k_glyphWidth * LargeFont::k_glyphHeight});
+  //constexpr static int k_maxGlyphPixelCount = std::max({SmallFont::k_glyphWidth * SmallFont::k_glyphHeight, LargeFont::k_glyphWidth * LargeFont::k_glyphHeight});
+  constexpr static int k_maxGlyphPixelCount = LargeFont::k_glyphWidth * LargeFont::k_glyphHeight;
   constexpr static const KDFont * Font(Size size) { return size == Size::Small ? &privateSmallFont : &privateLargeFont; }
 
   static bool CanBeWrittenWithGlyphs(const char * text);

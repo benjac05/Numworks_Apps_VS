@@ -8,6 +8,7 @@ extern "C" {
 }
 
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/keyboard/layout_keyboard.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/eadkpp.h"
 
 namespace Ion {
 namespace Keyboard {
@@ -39,8 +40,9 @@ public:
     m_bitField((uint64_t)1 << (uint8_t)k)
   {}
   inline bool keyDown(Key k) const {
-    assert((uint8_t)k < 64);
-    return (m_bitField>>(uint8_t)k) & 1;
+    return eadk_keyboard_key_down(*this, (eadk_key_t)k);
+    //assert((uint8_t)k < 64);
+    //return (m_bitField>>(uint8_t)k) & 1;
   }
   operator uint64_t() const { return m_bitField; }
   void setKey(Key k) {

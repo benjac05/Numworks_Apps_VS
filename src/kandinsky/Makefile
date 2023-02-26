@@ -1,15 +1,19 @@
-SFLAGS += -Ikandinsky/include
+SFLAGS += -Isrc/kandinsky/include
+Q =
 
-kandinsky_minimal_src += $(addprefix kandinsky/src/,\
+kandinsky_minimal_src += $(addprefix src/kandinsky/src/,\
   color.cpp \
-  font.cpp\
+  font.cpp \
   point.cpp \
   rect.cpp \
 )
 
+
+#REMOVED font.cpp
+
 #kandinsky/src/color.cpp kandinsky/src/font.cpp kandinsky/src/point.cpp kandinsky/src/rect.cpp
 
-kandinsky_src += $(addprefix kandinsky/src/,\
+kandinsky_src += $(addprefix src/kandinsky/src/,\
   color.cpp \
   context_line.cpp \
   context_pixel.cpp \
@@ -23,9 +27,11 @@ kandinsky_src += $(addprefix kandinsky/src/,\
   rect.cpp \
 )
 
+#REMOVED font.cpp
+
 #see above for result
 
-kandinsky_fonts_src += $(addprefix kandinsky/fonts/, \
+kandinsky_fonts_src += $(addprefix src/kandinsky/fonts/, \
   LargeFont.ttf \
   SmallFont.ttf \
 )
@@ -34,15 +40,28 @@ kandinsky_src += output/kandinsky/fonts/codepoint_to_glyph_index.cpp
 kandinsky_src += $(kandinsky_fonts_src)
 kandinsky_minimal_src += $(kandinsky_fonts_src)
 
-tests_src += $(addprefix kandinsky/test/,\
+tests_src += $(addprefix src/kandinsky/test/,\
   color.cpp\
-  font.cpp\
   rect.cpp\
 )
 
+define rule_for
+ifneq ($(filter global,$(5)),)
+$(addprefix output/,$(strip $(2))): $(strip $(3))
+	@ echo "$(shell printf "%-8s" $(strip $(1)))$$(@:output/%=%)"
+	$(Q) $(4)
+endif
+ifneq ($(filter local,$(5)),)
+$(addprefix output/,$(strip $(2))): $(addprefix output/,$(strip $(3)))
+	@ echo "$(shell printf "%-8s" $(strip $(1)))$$(@:output/%=%)"
+	$(Q) $(4)
+endif
+endef
+
+#REMOVED font.cpp
 code_points = kandinsky/fonts/code_points.h
 
-RASTERIZER_CFLAGS := -std=c11 -Iion/include $(shell pkg-config freetype2 --cflags)
+RASTERIZER_CFLAGS := -std=c11 -I./src/ion/include $(shell pkg-config freetype2 --cflags)
 RASTERIZER_LDFLAGS := $(shell pkg-config freetype2 --libs)
 LDFLAGS = -lfreetype -llz4
 #RASTERIZER_LDFLAGS := -llz4
@@ -56,12 +75,13 @@ endif
 $(eval $(call rule_for, \
   HOSTCC, \
   kandinsky/fonts/rasterizer, \
-  kandinsky/fonts/rasterizer.c kandinsky/fonts/code_points.h $(addprefix ion/src/external/lz4/, lz4.c lz4hc.c), \
+  src/kandinsky/fonts/rasterizer.c src/kandinsky/fonts/code_points.h $(addprefix src/ion/src/external/lz4/, lz4.c lz4hc.c), \
   $$(HOSTCC) $$(RASTERIZER_CFLAGS) $$(filter-out %.h,$$^) $$(RASTERIZER_LDFLAGS) -o $$@, \
   global \
 ))
 
 RASTERIZER := output/kandinsky/fonts/rasterizer
+
 
 # Define a rasterizing recipe. Parameters : font name, size, packed_width, packed_height
 define raster_font
@@ -81,3 +101,4 @@ endef
 
 $(eval $(call raster_font,SmallFont,12,7,14))
 $(eval $(call raster_font,LargeFont,16,10,18))
+

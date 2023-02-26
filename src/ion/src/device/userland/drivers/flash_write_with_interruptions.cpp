@@ -1,5 +1,5 @@
-#include <drivers/svcall.h>
-#include <shared/drivers/flash_write_with_interruptions.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/svcall.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/flash_write_with_interruptions.h"
 
 namespace Ion {
 namespace Device {

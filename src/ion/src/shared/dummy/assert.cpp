@@ -1,4 +1,4 @@
-#include <ion/assert.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/assert.h"
 #include <stdlib.h>
 
 void assertionAbort(const char * expression, const char * file, int line) {

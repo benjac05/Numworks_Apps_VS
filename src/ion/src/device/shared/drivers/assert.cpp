@@ -1,6 +1,6 @@
-#include <ion/assert.h>
-#include <ion/events.h>
-#include <ion/console.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/assert.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/events.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/console.h"
 #include <kandinsky/ion_context.h>
 
 /* Ad hoc functions to avoid requiring Poincare::PrintInt, which also needs a

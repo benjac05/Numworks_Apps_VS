@@ -6,7 +6,7 @@
 #include <SDL.h>
 #include <stdlib.h>
 
-#include <ion/src/simulator/linux/platform_images.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/linux/platform_images.h"
 
 namespace Ion {
 namespace Simulator {

@@ -21,6 +21,8 @@ namespace Display {
 void pushRect(KDRect r, const KDColor * pixels);
 void pushRectUniform(KDRect r, KDColor c);
 void pullRect(KDRect r, KDColor * pixels);
+void drawString(const char * text, KDPoint point, bool largeFont, KDColor textColor, KDColor backgroundColor);
+
 
 bool waitForVBlank();
 

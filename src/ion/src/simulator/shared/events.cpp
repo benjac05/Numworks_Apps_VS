@@ -1,19 +1,19 @@
 #include "events.h"
 #include "haptics.h"
-#include <ion/circuit_breaker.h>
-#include <ion/events.h>
-#include <ion/timing.h>
-#include <ion/src/shared/events.h>
-#include <ion/src/shared/events_modifier.h>
-#include <ion/src/shared/keyboard.h>
-#include <ion/src/shared/keyboard_queue.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/circuit_breaker.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/events.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/timing.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/shared/events.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/shared/events_modifier.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/shared/keyboard.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/shared/keyboard_queue.h"
 #include <assert.h>
 #include <algorithm>
-#include <ion/keyboard/layout_events.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/keyboard/layout_events.h"
 #include <SDL.h>
 
 #if ESCHER_LOG_EVENTS_NAME
-#include <ion/console.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/console.h"
 #endif
 
 #if ION_SIMULATOR_FILES

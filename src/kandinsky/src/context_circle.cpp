@@ -4,6 +4,7 @@
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
 
 #include <cmath>
+#define M_SQRT1_2 0.70710678118654752440
 
 // Returns index of position in buffer
 static int posToIndex(int i, int j, int r) {

@@ -162,7 +162,7 @@ int writeCodePointIndexPairTable(FILE * output) {
   int numberOfPairs = 0;
 
   fprintf(output, "constexpr static KDFont::CodePointIndexPair table[] = {\n");
-  for (int i = 0; i < NumberOfCodePoints; i++) {
+  for (int i = 0; i < NumberOfCodePoints; i++) { //NumberOfCodePoints = 145
     int currentCodePoint = CodePoints[i];
     if (currentCodePoint != (previousCodePoint + (i - previousIndex))) {
       fprintf(output, "  KDFont::CodePointIndexPair(0x%x, %d),\n", currentCodePoint, i);

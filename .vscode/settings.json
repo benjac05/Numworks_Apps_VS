@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "lz4hc.h": "c",
+        "cmath": "cpp"
+    }
+}

@@ -1,8 +1,8 @@
 #include "isr.h"
 #include <ion.h>
-#include <config/board.h>
-#include <shared/boot/rt0.h>
-#include <shared/drivers/usb.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/boot/rt0.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/usb.h"
 
 extern "C" {
   void abort();

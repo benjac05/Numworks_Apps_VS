@@ -1,8 +1,8 @@
 #include "dfu_interface.h"
-#include <shared/drivers/board_shared.h>
-#include <shared/drivers/flash_information.h>
-#include <shared/drivers/flash_write_with_interruptions.h>
-#include <ion/timing.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/board_shared.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/flash_information.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/flash_write_with_interruptions.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/timing.h"
 #include <string.h>
 
 namespace Ion {

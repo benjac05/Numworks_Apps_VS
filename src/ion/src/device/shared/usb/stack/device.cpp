@@ -1,6 +1,6 @@
 #include "device.h"
-#include <config/internal_flash.h>
-#include <shared/regs/otg.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/internal_flash.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/regs/otg.h"
 
 namespace Ion {
 namespace Device {

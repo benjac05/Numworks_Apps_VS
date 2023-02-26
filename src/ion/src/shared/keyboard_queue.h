@@ -1,8 +1,8 @@
 #ifndef ION_SHARED_KEYBOARD_QUEUE_H
 #define ION_SHARED_KEYBOARD_QUEUE_H
 
-#include <ion/keyboard.h>
-#include <ion/ring_buffer.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/keyboard.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/ring_buffer.h"
 
 namespace Ion {
 namespace Keyboard {

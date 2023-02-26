@@ -1,8 +1,8 @@
 #ifndef ION_DEVICE_SHARED_DRIVERS_BOARD_SHARED_H
 #define ION_DEVICE_SHARED_DRIVERS_BOARD_SHARED_H
 
-#include <shared/drivers/kernel_header.h>
-#include <shared/drivers/userland_header.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/kernel_header.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/userland_header.h"
 #include <stdint.h>
 
 namespace Ion {

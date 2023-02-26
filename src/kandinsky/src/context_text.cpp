@@ -1,8 +1,8 @@
 #include <assert.h>
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/context.h"
 #include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/kandinsky/include/kandinsky/font.h"
-#include <ion/unicode/utf8_decoder.h>
-#include <ion/display.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/unicode/utf8_decoder.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/display.h"
 #include <cmath>
 
 constexpr static int k_tabCharacterWidth = 4;

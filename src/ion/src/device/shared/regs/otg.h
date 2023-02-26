@@ -1,8 +1,8 @@
 #ifndef REGS_OTG_H
 #define REGS_OTG_H
 
-#include <shared/regs/register.h>
-#include <config/otg.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/regs/register.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/otg.h"
 
 namespace Ion {
 namespace Device {

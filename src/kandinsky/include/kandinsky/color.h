@@ -31,6 +31,13 @@ public:
     return Expand(b5, 5);
   }
 
+  uint32_t toRGB24() const {
+    const uint8_t r = red();
+    const uint8_t g = green();
+    const uint8_t b = blue();
+    return (static_cast<uint32_t>(r) << 16) | (static_cast<uint32_t>(g) << 8) | static_cast<uint32_t>(b);
+  } 
+
   static KDColor Blend(KDColor first, KDColor second, uint8_t alpha);
   operator uint16_t() const { return m_value; }
 

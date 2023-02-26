@@ -1,8 +1,8 @@
-#include <shared/drivers/board_shared.h>
-#include <shared/drivers/serial_number.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/board_shared.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/serial_number.h"
 #include <ion.h>
-#include <shared/drivers/usb.h>
-#include <shared/usb/calculator.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/drivers/usb.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/usb/calculator.h"
 
 namespace Ion {
 namespace USB {

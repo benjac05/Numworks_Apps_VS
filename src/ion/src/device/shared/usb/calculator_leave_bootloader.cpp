@@ -1,7 +1,7 @@
-#include <config/board.h>
-#include <drivers/board.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/include/n0110/config/board.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/userland/drivers/board.h"
 #include <shared-core/drivers/reset.h>
-#include <shared/usb/calculator.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/usb/calculator.h"
 
 namespace Ion {
 namespace Device {

@@ -1,5 +1,5 @@
 #include <ion.h>
-#include <ion/src/shared/crc32_eat_byte.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/shared/crc32_eat_byte.h"
 
 namespace Ion {
 

@@ -8,8 +8,8 @@
 #include "../../shared/events_modifier.h"
 
 #include <assert.h>
-#include <ion/events.h>
-#include <ion/unicode/utf8_helper.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/events.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/unicode/utf8_helper.h"
 #include <SDL.h>
 #include <string.h>
 

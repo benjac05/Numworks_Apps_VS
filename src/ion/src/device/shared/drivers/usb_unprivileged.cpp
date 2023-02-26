@@ -1,5 +1,5 @@
-#include <ion/usb.h>
-#include <shared/regs/otg.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/include/ion/usb.h"
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/device/shared/regs/otg.h"
 
 using namespace Ion::Device::Regs;
 

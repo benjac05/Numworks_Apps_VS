@@ -1,5 +1,5 @@
 #include "../shared/platform.h"
-#include <ion/src/simulator/windows/images.h>
+#include "/Users/Ben/Documents/Numworks_Apps/Numworks_Apps_VS/src/ion/src/simulator/windows/images.h"
 
 #include <SDL.h>
 #include <windows.h>
